@@ -49,6 +49,13 @@ apt-get update && apt-get install -y code libasound2 libgbm1 && \
 apt-get clean && rm -rf /var/lib/apt/lists/* /var/tmp/* /tmp/*
 
 # ------------------------------------------------------------------------------
+# Install gdbfrontend and clean up
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends build-essential gdb python3-pip tmux && \
+    python3 -m pip install gdbfrontend && \
+    apt-get clean && rm -rf /var/lib/apt/lists/* /var/tmp/* /tmp/*
+
+# ------------------------------------------------------------------------------
 # Install qlibc 2.4.6
 RUN cd /tmp && \
     curl -L ${QLIBCURL} -o qlibc-${QLIBCVERS}.tar.gz && \
