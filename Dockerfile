@@ -51,6 +51,10 @@ apt-get update && apt-get install -y code libasound2 libgbm1 && \
 apt-get clean && rm -rf /var/lib/apt/lists/* /var/tmp/* /tmp/*
 
 # ------------------------------------------------------------------------------
+# Install Eclipse
+RUN ECLPKG="CPP" /app/scripts/install_eclipse.sh
+
+# ------------------------------------------------------------------------------
 # Install python modules and clean up
 RUN apt-get update && \
     apt-get install -y --no-install-recommends build-essential gdb python3-pip tmux && \
