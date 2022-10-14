@@ -19,7 +19,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 apcalc apt-transport-https astyle \
 bash-completion bluefish bridge-utils build-essential \
 ca-certificates cgdb chaosreader cmake colordiff colortail ctags curl \
-dos2unix doxygen diffstat eterm evince file firefox \
+ddd dos2unix doxygen diffstat eterm evince file firefox \
 galculator gdb geany gedit gimp git gkrellm gnupg2 \
 hping3 htop hexcompare hexcurse hexdiff hexedit hexer \
 iftop iperf iproute2 iputils-ping kmod \
