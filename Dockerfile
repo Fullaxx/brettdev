@@ -69,7 +69,7 @@ RUN cd /tmp && \
 
 # ------------------------------------------------------------------------------
 # Install scripts and configuration files
-### COPY conf/menu.xml /usr/share/ubuntu-desktop/openbox/
+COPY conf/menu.xml /usr/share/ubuntu-desktop/openbox/
 
 # ------------------------------------------------------------------------------
 # Adjust my bash prompt
