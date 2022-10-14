@@ -18,9 +18,9 @@ ENV QLIBCURL "https://github.com/wolkykim/qlibc/archive/refs/tags/v${QLIBCVERS}.
 RUN apt-get update && apt-get install -y --no-install-recommends \
 apcalc apt-transport-https astyle \
 bash-completion bluefish bridge-utils build-essential \
-ca-certificates cgdb chaosreader cmake colordiff colortail ctags curl \
+ca-certificates cgdb chaosreader cmake colordiff colortail ctags curl curlftpfs \
 ddd diffstat dos2unix doxygen dtach eterm evince file firefox \
-galculator gdb geany gedit gimp git gkrellm gnupg2 \
+galculator gdb geany gedit gftp gimp git gkrellm gnupg2 \
 hping3 htop hexcompare hexcurse hexdiff hexedit hexer \
 iftop inetutils-traceroute iperf iproute2 iputils-ping kmod less lft lftp \
 libcurl4-gnutls-dev libczmq-dev libevent-dev libgcrypt20-dev \
@@ -28,7 +28,7 @@ libhiredis-dev libmicrohttpd-dev libnet1-dev libnet1-doc libpcap-dev \
 libsqlite3-dev libssl-dev libxml2-dev libzmq3-dev \
 libreoffice lsof man mc mosh most mtr-tiny \
 nano ndiff nedit netcat net-tools nload nmap nmon \
-openssh-client p7zip-rar patch parallel psmisc rsync \
+openssh-client p0f p7zip-rar patch parallel psmisc rsync \
 screen software-properties-common sqlite3 sshfs strace subversion sudo \
 tcpdump tcptraceroute telnet terminator terminology tmux traceroute tree tzdata \
 uftrace unzip valgrind vim vim-gtk3 wget wireshark \
