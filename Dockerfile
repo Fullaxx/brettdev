@@ -80,6 +80,10 @@ COPY conf/menu.xml /usr/share/ubuntu-desktop/openbox/
 RUN echo "\nsource /opt/bash/lang.sh\nsource /opt/bash/color_prompt.sh" >>/root/.bashrc
 
 # ------------------------------------------------------------------------------
+# Adjust my background
+RUN echo "\nhsetroot -center /usr/share/backgrounds/hardy_wallpaper_uhd.png" >>/usr/share/ubuntu-desktop/openbox//autostart
+
+# ------------------------------------------------------------------------------
 # Expose ports
 EXPOSE 5901
 
