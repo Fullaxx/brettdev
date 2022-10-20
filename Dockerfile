@@ -76,12 +76,13 @@ RUN cd /tmp && \
 COPY conf/menu.xml /usr/share/ubuntu-desktop/openbox/
 
 # ------------------------------------------------------------------------------
-# Adjust my bash prompt
+# Adjust bash prompt
 RUN echo "\nsource /opt/bash/lang.sh\nsource /opt/bash/color_prompt.sh" >>/root/.bashrc
 
 # ------------------------------------------------------------------------------
-# Adjust my background
+# Adjust autostart
 RUN echo "\nhsetroot -center /usr/share/backgrounds/hardy_wallpaper_uhd.png" >>/usr/share/ubuntu-desktop/openbox/autostart
+RUN echo "\n# Set Keyboard Rate\nxset r rate 195 35" >>/usr/share/ubuntu-desktop/openbox/autostart
 
 # ------------------------------------------------------------------------------
 # Expose ports
