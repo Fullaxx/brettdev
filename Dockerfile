@@ -85,6 +85,10 @@ RUN echo "\nhsetroot -center /usr/share/backgrounds/hardy_wallpaper_uhd.png" >>/
 RUN echo "\n# Set Keyboard Rate\nxset r rate 195 35" >>/usr/share/ubuntu-desktop/openbox/autostart
 
 # ------------------------------------------------------------------------------
+# Add configuration files for bluefish, geany, terminology
+ADD personalization.tar /root/
+
+# ------------------------------------------------------------------------------
 # Expose ports
 EXPOSE 5901
 
