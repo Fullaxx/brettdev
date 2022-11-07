@@ -10,7 +10,7 @@ ENV LANG C
 ENV TZ Etc/Zulu
 ENV CHROMEURL "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
 ENV CHROMEDEB "/tmp/chrome.deb"
-ENV QLIBCVERS "2.4.6"
+ENV QLIBCVERS "2.4.8"
 ENV QLIBCURL "https://github.com/wolkykim/qlibc/archive/refs/tags/v${QLIBCVERS}.tar.gz"
 
 # ------------------------------------------------------------------------------
@@ -62,7 +62,7 @@ RUN apt-get update && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /var/tmp/* /tmp/*
 
 # ------------------------------------------------------------------------------
-# Install qlibc 2.4.6
+# Install qlibc
 RUN cd /tmp && \
     curl -L ${QLIBCURL} -o qlibc-${QLIBCVERS}.tar.gz && \
     tar xf qlibc-${QLIBCVERS}.tar.gz && cd qlibc-${QLIBCVERS} && \
