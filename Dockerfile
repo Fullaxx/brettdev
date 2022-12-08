@@ -58,7 +58,7 @@ RUN ECLPKG="CPP" /app/scripts/install_eclipse.sh
 # Install python modules and clean up
 RUN apt-get update && \
     apt-get install -y --no-install-recommends build-essential gdb python3-pip tmux && \
-    python3 -m pip install gdbfrontend matplotlib pandas && \
+    python3 -m pip install gdbfrontend matplotlib pandas pygments && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /var/tmp/* /tmp/*
 
 # ------------------------------------------------------------------------------
@@ -76,13 +76,14 @@ RUN cd /tmp && \
 COPY conf/menu.xml /usr/share/ubuntu-desktop/openbox/
 
 # ------------------------------------------------------------------------------
-# Adjust bash prompt
-RUN echo "\nsource /opt/bash/lang.sh\nsource /opt/bash/color_prompt.sh" >>/root/.bashrc
-
-# ------------------------------------------------------------------------------
 # Adjust autostart
 RUN echo "\nhsetroot -center /usr/share/backgrounds/hardy_wallpaper_uhd.png" >>/usr/share/ubuntu-desktop/openbox/autostart
 RUN echo "\n# Set Keyboard Rate\nxset r rate 195 35" >>/usr/share/ubuntu-desktop/openbox/autostart
+
+# ------------------------------------------------------------------------------
+# Adjust bash prompt
+COPY conf/dot_bashrc /usr/share/ubuntu-desktop/
+RUN cat /usr/share/ubuntu-desktop/dot_bashrc >>/root/.bashrc
 
 # ------------------------------------------------------------------------------
 # Add configuration files for bluefish, geany, terminology

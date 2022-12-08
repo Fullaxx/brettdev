@@ -1,0 +1,9 @@
+
+# Give me colors
+source /opt/bash/lang.sh
+source /opt/bash/color_prompt.sh
+
+# Add colorless function
+colorless() {
+  pygmentize -O style=gruvbox-dark $1 | less -RN
+}
