@@ -36,25 +36,6 @@ xfe xterm yaru-theme-icon zip && \
 apt-get clean && rm -rf /var/lib/apt/lists/* /var/tmp/* /tmp/*
 
 # ------------------------------------------------------------------------------
-# Install Chrome
-RUN wget ${CHROMEURL} -O ${CHROMEDEB} && \
-dpkg -i ${CHROMEDEB} || (set -e; apt-get update; apt-get install -f -y) && \
-rm ${CHROMEDEB}
-
-# ------------------------------------------------------------------------------
-# Install VSCode
-RUN wget -q https://packages.microsoft.com/keys/microsoft.asc -O- \
-| apt-key --keyring /etc/apt/trusted.gpg.d/microsoft.gpg add - && \
-echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" \
->/etc/apt/sources.list.d/vscode.list && \
-apt-get update && apt-get install -y code libasound2 libgbm1 && \
-apt-get clean && rm -rf /var/lib/apt/lists/* /var/tmp/* /tmp/*
-
-# ------------------------------------------------------------------------------
-# Install Eclipse
-# RUN ECLPKG="CPP" /app/scripts/install_eclipse.sh
-
-# ------------------------------------------------------------------------------
 # Install python modules and clean up
 RUN apt-get update && \
     apt-get install -y --no-install-recommends build-essential gdb python3-pip tmux && \
@@ -70,6 +51,25 @@ RUN cd /tmp && \
     cd src && doxygen doxygen.conf && mkdir /usr/share/doc/qlibc-${QLIBCVERS} && \
     cd /tmp && cp -r qlibc-${QLIBCVERS}/doc/html /usr/share/doc/qlibc-${QLIBCVERS}/ && \
     rm -rf qlibc-${QLIBCVERS} qlibc-${QLIBCVERS}.tar.gz
+
+# ------------------------------------------------------------------------------
+# Install Chrome
+RUN wget ${CHROMEURL} -O ${CHROMEDEB} && \
+    dpkg -i ${CHROMEDEB} || (set -e; apt-get update; apt-get install -f -y) && \
+    rm ${CHROMEDEB}
+
+# ------------------------------------------------------------------------------
+# Install VSCode
+RUN wget -q https://packages.microsoft.com/keys/microsoft.asc -O- \
+    | apt-key --keyring /etc/apt/trusted.gpg.d/microsoft.gpg add - && \
+    echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" \
+    >/etc/apt/sources.list.d/vscode.list && \
+    apt-get update && apt-get install -y code libasound2 libgbm1 && \
+    apt-get clean && rm -rf /var/lib/apt/lists/* /var/tmp/* /tmp/*
+
+# ------------------------------------------------------------------------------
+# (DISABLED) Install Eclipse
+# RUN ECLPKG="CPP" /app/scripts/install_eclipse.sh
 
 # ------------------------------------------------------------------------------
 # Install scripts and configuration files
