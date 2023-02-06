@@ -52,7 +52,7 @@ apt-get clean && rm -rf /var/lib/apt/lists/* /var/tmp/* /tmp/*
 
 # ------------------------------------------------------------------------------
 # Install Eclipse
-RUN ECLPKG="CPP" /app/scripts/install_eclipse.sh
+# RUN ECLPKG="CPP" /app/scripts/install_eclipse.sh
 
 # ------------------------------------------------------------------------------
 # Install python modules and clean up
