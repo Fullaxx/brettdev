@@ -72,12 +72,14 @@ RUN wget -q https://packages.microsoft.com/keys/microsoft.asc -O- \
 # RUN ECLPKG="CPP" /app/scripts/install_eclipse.sh
 
 # ------------------------------------------------------------------------------
-# Install scripts and configuration files
+# Install wallpaper scripts and configuration files
+COPY bg/snowglobefluorescence1HDfree.jpg /usr/share/backgrounds/
 COPY conf/menu.xml /usr/share/ubuntu-desktop/openbox/
 
 # ------------------------------------------------------------------------------
 # Adjust autostart
-RUN echo "\nhsetroot -center /usr/share/backgrounds/hardy_wallpaper_uhd.png" >>/usr/share/ubuntu-desktop/openbox/autostart
+# RUN echo "\nhsetroot -center /usr/share/backgrounds/hardy_wallpaper_uhd.png" >>/usr/share/ubuntu-desktop/openbox/autostart
+RUN echo "\nhsetroot -center /usr/share/backgrounds/snowglobefluorescence1HDfree.jpg" >>/usr/share/ubuntu-desktop/openbox/autostart
 RUN echo "\n# Set Keyboard Rate\nxset r rate 195 35" >>/usr/share/ubuntu-desktop/openbox/autostart
 
 # ------------------------------------------------------------------------------
