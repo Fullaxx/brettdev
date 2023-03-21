@@ -30,7 +30,7 @@ libsqlite3-dev libssl-dev libxml2-dev libzmq3-dev \
 libreoffice lsof man mc mosh most mtr-tiny \
 nano ndiff nedit netcat net-tools nload nmap nmon openssh-client \
 p0f p7zip-rar patch parallel pbzip2 pigz pixz plzip psmisc rsync \
-screen software-properties-common sqlite3 sshfs strace subversion sudo \
+screen silversearcher-ag software-properties-common sqlite3 sshfs strace subversion sudo \
 tcpdump tcptraceroute telnet terminator terminology tmux traceroute tree tzdata \
 uftrace universal-ctags unzip valgrind vim vim-gtk3 wget wireshark \
 xfe xterm yaru-theme-icon zip && \
