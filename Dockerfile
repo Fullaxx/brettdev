@@ -28,8 +28,8 @@ libcurl4-openssl-dev libczmq-dev libevent-dev libgcrypt20-dev \
 libhiredis-dev libmicrohttpd-dev libnet1-dev libnet1-doc libpcap-dev \
 libsqlite3-dev libssl-dev libxml2-dev libzmq3-dev \
 libreoffice lsof man mc mosh most mtr-tiny \
-nano ndiff nedit netcat net-tools nload nmap nmon openssh-client \
-p0f p7zip-rar patch parallel pbzip2 pigz pixz plzip psmisc pv rsync \
+nano nbd-client ndiff nedit netcat net-tools nload nmap nmon openssh-client \
+p0f p7zip-rar patch parallel pbzip2 pigz pixz plzip psmisc pv rsync run-one \
 sakura screen silversearcher-ag software-properties-common \
 sqlite3 sshfs strace subversion sudo \
 tcpdump tcptraceroute telnet terminator terminology tmux traceroute tree tzdata \
