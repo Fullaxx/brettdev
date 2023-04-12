@@ -40,6 +40,8 @@
 
 <menu id="apps-utilities-menu" label="Utilities">
 	<item label="Galculator"><action name="Execute"><command>/app/scripts/galculator.sh</command></action></item>
+	<item label="htop"><action name="Execute"><command>terminology -T htop -g 160x40 -e htop</command></action></item>
+	<item label="btop"><action name="Execute"><command>terminology -T btop -g 160x40 -e btop --utf-force</command></action></item>
 </menu>
 
 <menu id="system-menu" label="System">
