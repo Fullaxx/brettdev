@@ -17,7 +17,7 @@ ENV QLIBCURL "https://github.com/wolkykim/qlibc/archive/refs/tags/v${QLIBCVERS}.
 # Install tools from ubuntu repo
 RUN apt-get update && apt-get install -y --no-install-recommends \
 apcalc apt-transport-https astyle \
-bash-completion bluefish bridge-utils btop build-essential \
+bash-completion bluefish bridge-utils build-essential \
 ca-certificates cgdb chaosreader cmake colordiff colortail cscope curl curlftpfs \
 ddd diffstat dos2unix doxygen dtach eterm evince file firefox \
 galculator gdb geany gedit gftp ghex gimp git gkrellm gnupg2 \
@@ -68,6 +68,14 @@ RUN wget -q https://packages.microsoft.com/keys/microsoft.asc -O- \
     >/etc/apt/sources.list.d/vscode.list && \
     apt-get update && apt-get install -y code libasound2 libgbm1 && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /var/tmp/* /tmp/*
+
+# ------------------------------------------------------------------------------
+# Install btop++
+RUN wget https://github.com/aristocratos/btop/releases/download/v1.2.13/btop-x86_64-linux-musl.tbz && \
+    tar xvf btop-x86_64-linux-musl.tbz && \
+    cd btop && sed -e 's/^BANNER/#BANNER/' -i Makefile && \
+    ./install.sh PREFIX=/usr && ./setuid.sh PREFIX=/usr && \
+    cd ../ && rm -rf btop btop-x86_64-linux-musl.tbz
 
 # ------------------------------------------------------------------------------
 # (DISABLED) Install Eclipse
