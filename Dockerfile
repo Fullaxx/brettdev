@@ -17,7 +17,7 @@ ENV QLIBCURL "https://github.com/wolkykim/qlibc/archive/refs/tags/v${QLIBCVERS}.
 # Install tools from ubuntu repo
 RUN apt-get update && apt-get install -y --no-install-recommends \
 apcalc apt-transport-https astyle \
-bash-completion bluefish bridge-utils build-essential \
+bash-completion bluefish bridge-utils btop build-essential \
 ca-certificates cgdb chaosreader cmake colordiff colortail cscope curl curlftpfs \
 ddd diffstat dos2unix doxygen dtach eterm evince file firefox \
 galculator gdb geany gedit gftp ghex gimp git gkrellm gnupg2 \
