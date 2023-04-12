@@ -20,7 +20,7 @@ apcalc apt-transport-https astyle \
 bash-completion bluefish bridge-utils build-essential \
 ca-certificates cgdb chaosreader cmake colordiff colortail cscope curl curlftpfs \
 ddd diffstat dos2unix doxygen dtach eterm evince file firefox \
-galculator gdb geany gedit gftp gimp git gkrellm gnupg2 \
+galculator gdb geany gedit gftp ghex gimp git gkrellm gnupg2 \
 hping3 htop hexcompare hexcurse hexdiff hexedit hexer \
 iftop inetutils-traceroute iperf iproute2 iputils-ping \
 kitty kmod lbzip2 less lft lftp lrzip \
