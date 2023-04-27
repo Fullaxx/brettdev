@@ -23,7 +23,7 @@ ddd diffstat dos2unix doxygen dtach eterm evince file firefox \
 galculator gdb geany gedit gftp ghex gimp git gkrellm gnupg2 \
 hping3 htop hexcompare hexcurse hexdiff hexedit hexer \
 iftop inetutils-traceroute iperf iproute2 iputils-ping \
-kitty kmod lbzip2 less lft lftp lrzip \
+jq kitty kmod lbzip2 less lft lftp lrzip \
 libcurl4-openssl-dev libczmq-dev libevent-dev libgcrypt20-dev \
 libhiredis-dev libmicrohttpd-dev libnet1-dev libnet1-doc libpcap-dev \
 libsqlite3-dev libssl-dev libxml2-dev libzmq3-dev \
