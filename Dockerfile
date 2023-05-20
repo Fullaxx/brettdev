@@ -79,7 +79,7 @@ RUN wget https://github.com/aristocratos/btop/releases/download/v1.2.13/btop-x86
     cd ../ && rm -rf btop btop-x86_64-linux-musl.tbz
 
 # ------------------------------------------------------------------------------
-# Install get-delta
+# Install git-delta
 RUN wget https://github.com/dandavison/delta/releases/download/0.15.1/git-delta_0.15.1_amd64.deb && \
     dpkg -i git-delta_0.15.1_amd64.deb && \
     rm git-delta_0.15.1_amd64.deb
