@@ -80,9 +80,9 @@ RUN wget https://github.com/aristocratos/btop/releases/download/v1.2.13/btop-x86
 
 # ------------------------------------------------------------------------------
 # Install git-delta
-RUN wget https://github.com/dandavison/delta/releases/download/0.15.1/git-delta_0.15.1_amd64.deb && \
-    dpkg -i git-delta_0.15.1_amd64.deb && \
-    rm git-delta_0.15.1_amd64.deb
+RUN wget https://github.com/dandavison/delta/releases/download/0.16.5/git-delta_0.16.5_amd64.deb && \
+    dpkg -i git-delta_0.16.5_amd64.deb && \
+    rm git-delta_0.16.5_amd64.deb
 
 # ------------------------------------------------------------------------------
 # (DISABLED) Install kaitai-struct compiler and visualizer
