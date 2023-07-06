@@ -41,8 +41,8 @@ apt-get clean && rm -rf /var/lib/apt/lists/* /var/tmp/* /tmp/*
 # Install python modules and clean up
 RUN apt-get update && \
     apt-get install -y --no-install-recommends build-essential gdb python3-pip tmux && \
-    python3 -m pip install aioredis frogmouth gdbfrontend matplotlib pandas \
-      pudb pygments pyzmq redis xxhash && \
+    python3 -m pip install aioredis alpaca-py frogmouth gdbfrontend matplotlib \
+      pandas pudb pygments pyzmq redis xxhash && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /var/tmp/* /tmp/*
 
 # ------------------------------------------------------------------------------
