@@ -14,6 +14,11 @@ ENV QLIBCVERS "2.4.8"
 ENV QLIBCURL "https://github.com/wolkykim/qlibc/archive/refs/tags/v${QLIBCVERS}.tar.gz"
 
 # ------------------------------------------------------------------------------
+# Install Firefox PPA
+RUN /app/scripts/prepare_firefox_ppa.sh && \
+    apt-get clean && rm -rf /var/lib/apt/lists/* /var/tmp/* /tmp/*
+
+# ------------------------------------------------------------------------------
 # Install tools from ubuntu repo
 RUN apt-get update && apt-get install -y --no-install-recommends \
 apcalc apt-transport-https astyle \
@@ -56,21 +61,6 @@ RUN cd /tmp && \
     rm -rf qlibc-${QLIBCVERS} qlibc-${QLIBCVERS}.tar.gz
 
 # ------------------------------------------------------------------------------
-# Install Chrome
-RUN wget ${CHROMEURL} -O ${CHROMEDEB} && \
-    dpkg -i ${CHROMEDEB} || (set -e; apt-get update; apt-get install -f -y) && \
-    rm ${CHROMEDEB}
-
-# ------------------------------------------------------------------------------
-# Install VSCode
-RUN wget -q https://packages.microsoft.com/keys/microsoft.asc -O- \
-    | apt-key --keyring /etc/apt/trusted.gpg.d/microsoft.gpg add - && \
-    echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" \
-    >/etc/apt/sources.list.d/vscode.list && \
-    apt-get update && apt-get install -y code libasound2 libgbm1 && \
-    apt-get clean && rm -rf /var/lib/apt/lists/* /var/tmp/* /tmp/*
-
-# ------------------------------------------------------------------------------
 # Install btop++
 RUN wget https://github.com/aristocratos/btop/releases/download/v1.2.13/btop-x86_64-linux-musl.tbz && \
     tar xvf btop-x86_64-linux-musl.tbz && \
@@ -93,6 +83,16 @@ RUN wget https://github.com/dandavison/delta/releases/download/0.16.5/git-delta_
 #    gem install kaitai-struct-visualizer && \
 #    pip install kaitaistruct && \
 #    apt-get clean && rm -rf /var/lib/apt/lists/* /var/tmp/* /tmp/*
+
+# ------------------------------------------------------------------------------
+# Install Chrome
+RUN /app/scripts/install_chrome.sh && \
+    apt-get clean && rm -rf /var/lib/apt/lists/* /var/tmp/* /tmp/*
+
+# ------------------------------------------------------------------------------
+# Install VSCode
+RUN /app/scripts/install_vscode_repo.sh && \
+    apt-get clean && rm -rf /var/lib/apt/lists/* /var/tmp/* /tmp/*
 
 # ------------------------------------------------------------------------------
 # (DISABLED) Install Eclipse
