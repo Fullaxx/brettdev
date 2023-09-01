@@ -10,7 +10,7 @@ ENV LANG C
 ENV TZ Etc/Zulu
 ENV CHROMEURL "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
 ENV CHROMEDEB "/tmp/chrome.deb"
-ENV QLIBCVERS "2.4.8"
+ENV QLIBCVERS "2.5.0"
 ENV QLIBCURL "https://github.com/wolkykim/qlibc/archive/refs/tags/v${QLIBCVERS}.tar.gz"
 
 # ------------------------------------------------------------------------------
