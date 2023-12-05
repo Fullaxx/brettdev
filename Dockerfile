@@ -34,6 +34,10 @@ RUN /install/scripts/add_python_modules.sh
 RUN /install/scripts/add_qlibc.sh
 
 # ------------------------------------------------------------------------------
+# Install lazygit
+RUN /install/scripts/add_lazygit.sh
+
+# ------------------------------------------------------------------------------
 # Install btop++
 RUN /install/scripts/add_btop.sh
 
