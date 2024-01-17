@@ -47,7 +47,7 @@ RUN /install/scripts/add_git_delta.sh
 
 # ------------------------------------------------------------------------------
 # Install websocat
-RUN /install/scripts/scripts/add_websocat.sh
+RUN /install/scripts/add_websocat.sh
 
 # ------------------------------------------------------------------------------
 # (DISABLED) Install kaitai-struct compiler and visualizer
