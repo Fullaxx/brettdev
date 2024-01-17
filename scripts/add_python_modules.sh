@@ -22,7 +22,7 @@ pudb \
 pyfinance \
 pygments \
 pyzmq \
-redis \
+redis[hiredis] \
 xxhash
 
 apt-get clean

@@ -83,7 +83,7 @@ RUN cat /usr/share/ubuntu-desktop/dot_bashrc >>/root/.bashrc
 
 # ------------------------------------------------------------------------------
 # Add configuration files for bluefish, geany, terminology
-ADD personalization.tar /root/
+ADD personalization.tar /
 
 # ------------------------------------------------------------------------------
 # Expose ports
