@@ -23,7 +23,8 @@ pyfinance \
 pygments \
 pyzmq \
 redis[hiredis] \
-xxhash
+xxhash \
+yfinance
 
 apt-get clean
 
