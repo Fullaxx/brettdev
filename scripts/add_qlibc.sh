@@ -5,7 +5,8 @@ set -e
 QLIBCVERS="2.5.0"
 QLIBCURL="https://github.com/wolkykim/qlibc/archive/refs/tags/v${QLIBCVERS}.tar.gz"
 
-cd /tmp
+mkdir -p /opt/code
+cd /opt/code
 curl -L ${QLIBCURL} -o qlibc-${QLIBCVERS}.tar.gz
 tar xf qlibc-${QLIBCVERS}.tar.gz
 cd qlibc-${QLIBCVERS}
@@ -15,7 +16,7 @@ make install
 cd src
 doxygen doxygen.conf
 mkdir /usr/share/doc/qlibc-${QLIBCVERS}
-cd /tmp
+cd /opt/code
 cp -r qlibc-${QLIBCVERS}/doc/html /usr/share/doc/qlibc-${QLIBCVERS}/
-rm -rf qlibc-${QLIBCVERS} qlibc-${QLIBCVERS}.tar.gz
+rm -rf qlibc-${QLIBCVERS}
 ldconfig

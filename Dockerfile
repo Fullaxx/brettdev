@@ -34,6 +34,10 @@ RUN /install/scripts/add_python_modules.sh
 RUN /install/scripts/add_qlibc.sh
 
 # ------------------------------------------------------------------------------
+# Install libcorrect
+RUN /install/scripts/add_libcorrect.sh
+
+# ------------------------------------------------------------------------------
 # Install lazygit
 RUN /install/scripts/add_lazygit.sh
 
