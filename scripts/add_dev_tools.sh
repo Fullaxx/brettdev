@@ -119,6 +119,7 @@ tcptraceroute \
 telnet \
 terminator \
 terminology \
+thonny \
 tmux \
 traceroute \
 tree \
