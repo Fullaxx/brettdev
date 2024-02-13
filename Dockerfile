@@ -34,10 +34,6 @@ RUN /install/scripts/add_python_modules.sh
 RUN /install/scripts/add_qlibc.sh
 
 # ------------------------------------------------------------------------------
-# Install libcorrect
-RUN /install/scripts/add_libcorrect.sh
-
-# ------------------------------------------------------------------------------
 # Install lazygit
 RUN /install/scripts/add_lazygit.sh
 
@@ -64,6 +60,19 @@ RUN /install/scripts/add_chrome.sh
 # ------------------------------------------------------------------------------
 # Install VSCode
 RUN /install/scripts/add_vscode.sh
+
+# ------------------------------------------------------------------------------
+# (DISABLED) Install libcorrect
+# RUN /install/scripts/add_libcorrect.sh
+
+# ------------------------------------------------------------------------------
+# (DISABLED) Install libaff3ct.sh
+# RUN /install/scripts/add_libaff3ct.sh
+
+# ------------------------------------------------------------------------------
+# (DISABLED) Install GnuRadio
+# RUN /install/scripts/add_gnuradio.sh
+# RUN /install/scripts/add_gnuradio_ppa.sh
 
 # ------------------------------------------------------------------------------
 # (DISABLED) Install Eclipse
