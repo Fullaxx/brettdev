@@ -11,7 +11,6 @@ python3-pip \
 tmux
 
 python3 -m pip install \
-aioredis \
 alpaca-py \
 frogmouth \
 gdbfrontend \
