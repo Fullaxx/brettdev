@@ -18,7 +18,6 @@ matplotlib \
 pandas \
 pandas_ta \
 pudb \
-pyarrow \
 pyfinance \
 pygments \
 pyzmq \
