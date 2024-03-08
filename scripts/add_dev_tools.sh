@@ -138,6 +138,8 @@ xxhash \
 yaru-theme-icon \
 zip
 
+ln -s /usr/bin/libreoffice /usr/bin/LO
+
 apt-get clean
 
 rm -rf /var/lib/apt/lists/* /var/tmp/* /tmp/*
