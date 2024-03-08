@@ -15,7 +15,7 @@ alpaca-py \
 frogmouth \
 gdbfrontend \
 matplotlib \
-pandas \
+pandas==2.1.4 \
 pandas_ta \
 pudb \
 pyfinance \
