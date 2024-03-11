@@ -10,10 +10,13 @@ gdb \
 python3-pip \
 tmux
 
+# seaborn pyqtgraph
+
 python3 -m pip install \
 alpaca-py \
 frogmouth \
 gdbfrontend \
+ipython \
 matplotlib \
 pandas==2.1.4 \
 pandas_ta \
