@@ -25,6 +25,9 @@ pyfinance \
 pygments \
 pyzmq \
 redis[hiredis] \
+rel \
+websocket-client \
+wsaccel \
 xxhash \
 yfinance
 
