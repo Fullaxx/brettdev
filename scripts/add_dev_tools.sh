@@ -136,7 +136,8 @@ xfe \
 xterm \
 xxhash \
 yaru-theme-icon \
-zip
+zip \
+zlib1g-dev
 
 ln -s /usr/bin/libreoffice /usr/bin/LO
 
