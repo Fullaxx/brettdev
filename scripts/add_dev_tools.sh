@@ -123,6 +123,7 @@ thonny \
 tmux \
 traceroute \
 tree \
+tshark \
 tzdata \
 uftrace \
 universal-ctags \
