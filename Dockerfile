@@ -50,6 +50,10 @@ RUN /install/scripts/add_git_delta.sh
 RUN /install/scripts/add_websocat.sh
 
 # ------------------------------------------------------------------------------
+# Install Draw.io
+RUN /install/scripts/add_drawio_desktop.sh
+
+# ------------------------------------------------------------------------------
 # (DISABLED) Install kaitai-struct compiler and visualizer
 # RUN /install/scripts/add_kaitai_struct.sh
 
