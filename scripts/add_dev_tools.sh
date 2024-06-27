@@ -87,9 +87,12 @@ ndiff \
 nedit \
 netcat \
 net-tools \
+nfdump \
+ngrep \
 nload \
 nmap \
 nmon \
+ntopng \
 nnn \
 openssh-client \
 p0f \
@@ -115,6 +118,8 @@ subversion \
 sudo \
 taskwarrior \
 tcpdump \
+tcpflow \
+tcpstat \
 tcptraceroute \
 telnet \
 terminator \
