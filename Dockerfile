@@ -1,13 +1,13 @@
 # ------------------------------------------------------------------------------
 # Pull base image
 FROM fullaxx/ubuntu-desktop
-MAINTAINER Brett Kuskie <fullaxx@gmail.com>
+LABEL author="Brett Kuskie <fullaxx@gmail.com>"
 
 # ------------------------------------------------------------------------------
 # Set environment variables
-ENV DEBIAN_FRONTEND noninteractive
-ENV LANG C
-ENV TZ Etc/Zulu
+ENV DEBIAN_FRONTEND=noninteractive
+ENV LANG=C
+ENV TZ=Etc/Zulu
 
 # ------------------------------------------------------------------------------
 # Install Scripts
