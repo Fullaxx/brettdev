@@ -26,6 +26,7 @@ pygments \
 pyzmq \
 redis[hiredis] \
 rel \
+scapy \
 websocket-client \
 wsaccel \
 xxhash \
