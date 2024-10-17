@@ -126,6 +126,7 @@ telnet \
 terminator \
 terminology \
 thonny \
+tig \
 tmux \
 traceroute \
 tree \
