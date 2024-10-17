@@ -38,6 +38,7 @@ gftp \
 ghex \
 gimp \
 git \
+gitk \
 gkrellm \
 gnupg2 \
 hping3 \
