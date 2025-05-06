@@ -16,6 +16,7 @@ python3 -m pip install \
 alpaca-py \
 frogmouth \
 gdbfrontend \
+grip \
 ipython \
 matplotlib \
 pandas==2.1.4 \

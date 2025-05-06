@@ -78,6 +78,7 @@ libreoffice \
 lsof \
 man \
 mc \
+mdp \
 mosh \
 most \
 mtr-tiny \
@@ -98,8 +99,9 @@ nnn \
 openssh-client \
 p0f \
 p7zip-rar \
-patch \
+pandoc \
 parallel \
+patch \
 pbzip2 \
 pigz \
 pixz \
