@@ -110,6 +110,7 @@ psmisc \
 pv \
 rsync \
 run-one \
+rust-markdown \
 sakura \
 screen \
 silversearcher-ag \
