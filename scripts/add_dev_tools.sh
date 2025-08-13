@@ -79,6 +79,7 @@ lsof \
 man \
 mc \
 mdp \
+moreutils \
 mosh \
 most \
 mtr-tiny \
