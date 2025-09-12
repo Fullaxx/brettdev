@@ -22,6 +22,10 @@ RUN /install/scripts/unminimize.sh
 RUN /install/scripts/add_firefox_ppa.sh
 
 # ------------------------------------------------------------------------------
+# Install Docker Binary
+RUN /install/scripts/add_docker_binary.sh
+
+# ------------------------------------------------------------------------------
 # Install tools from ubuntu repo
 RUN /install/scripts/add_dev_tools.sh
 
