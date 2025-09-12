@@ -5,12 +5,12 @@ LABEL author="Brett Kuskie <fullaxx@gmail.com>"
 
 # ------------------------------------------------------------------------------
 # Set environment variables
-ENV DEBIAN_FRONTEND=noninteractive
-ENV LANG=C
-ENV TZ=Etc/Zulu
+ENV DEBIAN_FRONTEND="noninteractive"
+ENV TZ="Etc/Zulu"
 
 # ------------------------------------------------------------------------------
-# Install Scripts
+# Install requirements.txt and scripts
+COPY requirements.txt /install/requirements.txt
 COPY scripts /install/scripts
 
 # ------------------------------------------------------------------------------
@@ -24,10 +24,6 @@ RUN /install/scripts/add_firefox_ppa.sh
 # ------------------------------------------------------------------------------
 # Install tools from ubuntu repo
 RUN /install/scripts/add_dev_tools.sh
-
-# ------------------------------------------------------------------------------
-# Install python modules
-RUN /install/scripts/add_python_modules.sh
 
 # ------------------------------------------------------------------------------
 # Install qlibc

@@ -109,6 +109,7 @@ pixz \
 plzip \
 psmisc \
 pv \
+python3-pip \
 rsync \
 run-one \
 rust-markdown \
@@ -150,6 +151,8 @@ xxhash \
 yaru-theme-icon \
 zip \
 zlib1g-dev
+
+pip3 install -r /install/requirements.txt
 
 ln -s /usr/bin/libreoffice /usr/bin/LO
 

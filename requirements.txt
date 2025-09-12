@@ -1,0 +1,74 @@
+# Official Alpaca API
+alpaca-py
+
+frogmouth
+
+gdbfrontend
+
+grip
+
+ipython
+
+matplotlib
+
+openbb
+#openbb[all] - this appears to include dependency hell
+openbb-alpha-vantage
+openbb-biztoc
+openbb-cboe
+openbb-ecb
+openbb-federal-reserve
+openbb-finra
+openbb-finviz
+openbb-government-us
+openbb-nasdaq
+openbb-seeking-alpha
+openbb-stockgrid
+openbb-tmx
+openbb-tradier
+openbb-wsj
+
+# Pandas 2.2.0 has a memory leak
+# This should have been fixed in pandas 2.2.3
+#pandas==2.1.4
+pandas
+
+# Technical Analysis library for generating signals/indicators
+# https://github.com/twopirllc/ - WTF HAPPENED HERE?!?1
+#pandas_ta
+# https://github.com/xgboosted/pandas-ta-classic
+pandas_ta_classic
+TA-Lib
+
+plotly
+
+pudb
+
+pygments
+
+# pyqtgraph
+
+# Python bindings for ZMQ
+pyzmq
+
+# Python bindings for Redis
+redis[hiredis]
+
+scapy
+
+# Trend Lines using Linear Regression Statistics
+scipy
+
+# seaborn
+
+streamlit
+
+# Websocket library (Should look into alpacas Stream class)
+rel
+websocket-client
+wsaccel
+
+xxhash
+
+yfinance
+
