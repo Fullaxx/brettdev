@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------
 # Pull base image
-FROM fullaxx/ubuntu-desktop
+FROM ghcr.io/fullaxx/ubuntu-desktop:latest
 LABEL author="Brett Kuskie <fullaxx@gmail.com>"
 
 # ------------------------------------------------------------------------------
