@@ -132,6 +132,7 @@ terminator \
 terminology \
 thonny \
 tig \
+tigervnc-viewer \
 tmux \
 traceroute \
 tree \
