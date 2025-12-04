@@ -1,6 +1,6 @@
 
 # Give me colors
-source /opt/bash/lang.sh
+#source /opt/bash/lang.sh
 source /opt/bash/color_prompt.sh
 
 # Add colorless function
