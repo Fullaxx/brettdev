@@ -110,7 +110,6 @@ pixz \
 plzip \
 psmisc \
 pv \
-python3-pip \
 rsync \
 run-one \
 rust-markdown \
@@ -131,7 +130,6 @@ tcptraceroute \
 telnet \
 terminator \
 terminology \
-thonny \
 tig \
 tigervnc-viewer \
 tmux \
@@ -154,8 +152,9 @@ yaru-theme-icon \
 zip \
 zlib1g-dev
 
-rm /usr/lib/python3*/EXTERNALLY-MANAGED && \
-pip3 install -r /install/requirements.txt
+apt-get install -y --no-install-recommends thonny python3-pip
+rm /usr/lib/python3*/EXTERNALLY-MANAGED
+pip3 install --user -r /install/requirements.txt
 
 ln -s /usr/bin/libreoffice /usr/bin/LO
 
