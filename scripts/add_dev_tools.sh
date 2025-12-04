@@ -5,7 +5,6 @@ set -e
 apt-get update
 
 apt-get install -y --no-install-recommends \
-apcalc \
 apt-transport-https \
 astyle \
 bash-completion \
@@ -13,6 +12,7 @@ bluefish \
 bridge-utils \
 build-essential \
 ca-certificates \
+calc \
 cgdb \
 chaosreader \
 cmake \
@@ -20,7 +20,6 @@ colordiff \
 colortail \
 cscope \
 curl \
-curlftpfs \
 ddd \
 diffstat \
 dos2unix \
@@ -85,11 +84,13 @@ most \
 mtr-tiny \
 nano \
 nbd-client \
+ncat \
 ncdu \
 ndiff \
 nedit \
-netcat \
 net-tools \
+netcat-openbsd \
+netrw \
 nfdump \
 ngrep \
 nload \
@@ -153,6 +154,7 @@ yaru-theme-icon \
 zip \
 zlib1g-dev
 
+rm /usr/lib/python3*/EXTERNALLY-MANAGED && \
 pip3 install -r /install/requirements.txt
 
 ln -s /usr/bin/libreoffice /usr/bin/LO
