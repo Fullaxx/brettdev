@@ -6,7 +6,7 @@ LABEL author="Brett Kuskie <fullaxx@gmail.com>"
 # ------------------------------------------------------------------------------
 # Set environment variables
 ENV DEBIAN_FRONTEND="noninteractive"
-ENV TZ="Etc/Zulu"
+ENV TZ="UTC"
 
 # ------------------------------------------------------------------------------
 # Install requirements.txt and scripts
@@ -22,12 +22,13 @@ RUN /install/scripts/unminimize.sh
 RUN /install/scripts/add_firefox_ppa.sh
 
 # ------------------------------------------------------------------------------
-# Install Docker Binary
-RUN /install/scripts/add_docker_binary.sh
-
-# ------------------------------------------------------------------------------
 # Install tools from ubuntu repo
 RUN /install/scripts/add_dev_tools.sh
+
+# ------------------------------------------------------------------------------
+# Install Docker Binary
+# RUN /install/scripts/add_docker_binary.sh
+RUN /install/scripts/add_docker_ppa.sh
 
 # ------------------------------------------------------------------------------
 # Install qlibc
