@@ -1,6 +1,8 @@
 # Official Alpaca API
 alpaca-py
 
+b64fx
+
 frogmouth
 
 gdbfrontend
