@@ -147,6 +147,7 @@ wget \
 wireshark \
 xfe \
 xterm \
+xxd \
 xxhash \
 yaru-theme-icon \
 zip \
