@@ -26,6 +26,10 @@ RUN /install/scripts/add_firefox_ppa.sh
 RUN /install/scripts/add_dev_tools.sh
 
 # ------------------------------------------------------------------------------
+# Install tools from ubuntu repo
+RUN /install/scripts/add_claude_code_native.sh
+
+# ------------------------------------------------------------------------------
 # Install Docker Binary
 # RUN /install/scripts/add_docker_binary.sh
 RUN /install/scripts/add_docker_ppa.sh
@@ -51,8 +55,8 @@ RUN /install/scripts/add_git_delta.sh
 RUN /install/scripts/add_websocat.sh
 
 # ------------------------------------------------------------------------------
-# Install Draw.io
-RUN /install/scripts/add_drawio_desktop.sh
+# (DISABLED) Install Draw.io
+# RUN /install/scripts/add_drawio_desktop.sh
 
 # ------------------------------------------------------------------------------
 # (DISABLED) Install kaitai-struct compiler and visualizer

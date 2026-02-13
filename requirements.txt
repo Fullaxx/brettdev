@@ -15,27 +15,27 @@ ipython
 
 matplotlib
 
-openbb
-#openbb[all] - this appears to include dependency hell
-openbb-alpha-vantage
-openbb-biztoc
-openbb-cboe
-openbb-ecb
-openbb-federal-reserve
-openbb-finra
-openbb-finviz
-openbb-government-us
-openbb-nasdaq
-openbb-seeking-alpha
-openbb-stockgrid
-openbb-tmx
-openbb-tradier
-openbb-wsj
+#openbb
+# XXX openbb[all] - this appears to include dependency hell
+#openbb-alpha-vantage
+#openbb-biztoc
+#openbb-cboe
+#openbb-ecb
+#openbb-federal-reserve
+#openbb-finra
+#openbb-finviz
+#openbb-government-us
+#openbb-nasdaq
+#openbb-seeking-alpha
+#openbb-stockgrid
+#openbb-tmx
+#openbb-tradier
+#openbb-wsj
 
 # Pandas 2.2.0 has a memory leak
 # This should have been fixed in pandas 2.2.3
 #pandas==2.1.4
-pandas
+pandas==2.3.3
 
 # Technical Analysis library for generating signals/indicators
 # https://github.com/twopirllc/ - WTF HAPPENED HERE?!?1
@@ -66,6 +66,8 @@ scipy
 # seaborn
 
 streamlit
+streamlit-aggrid
+streamlit-lightweight-charts
 
 # Websocket library (Should look into alpacas Stream class)
 rel
@@ -74,5 +76,5 @@ wsaccel
 
 xxhash
 
-yfinance
+# yfinance
 
