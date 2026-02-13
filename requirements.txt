@@ -3,6 +3,8 @@ alpaca-py
 
 b64fx
 
+edgartools
+
 frogmouth
 
 gdbfrontend
