@@ -34,6 +34,7 @@ gdb \
 geany \
 gedit \
 gftp \
+gh \
 ghex \
 gimp \
 git \
