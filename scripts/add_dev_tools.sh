@@ -116,6 +116,7 @@ run-one \
 rust-markdown \
 sakura \
 screen \
+scrot \
 silversearcher-ag \
 software-properties-common \
 sqlite3 \
@@ -146,6 +147,7 @@ vim \
 vim-gtk3 \
 wget \
 wireshark \
+x11-apps \
 xfe \
 xterm \
 xxd \
