@@ -26,7 +26,7 @@ RUN /install/scripts/add_firefox_ppa.sh
 RUN /install/scripts/add_dev_tools.sh
 
 # ------------------------------------------------------------------------------
-# Install tools from ubuntu repo
+# Install claude code
 RUN /install/scripts/add_claude_code_native.sh
 
 # ------------------------------------------------------------------------------
