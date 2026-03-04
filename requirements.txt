@@ -1,11 +1,24 @@
 # Official Alpaca API
-alpaca-py
+# alpaca-py
 
+# URL-safe Ascii85/Base85 data encoding
 b64fx
+
+# Password Hashing
+bcrypt
+
+# HTML parser
+beautifulsoup4
 
 edgartools
 
-frogmouth
+# Random browser user-agent strings
+fake-useragent
+
+# A Markdown document viewer for the terminal
+# frogmouth 0.9.2 depends on httpx<0.25.0 and >=0.24.1
+# conflicts with edgartools
+# frogmouth
 
 gdbfrontend
 
@@ -57,6 +70,9 @@ pyzmq
 
 # Python bindings for Redis
 redis[hiredis]
+
+# HTTP library with user-agent / header support
+requests
 
 scapy
 

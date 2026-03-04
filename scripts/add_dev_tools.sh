@@ -156,9 +156,14 @@ yaru-theme-icon \
 zip \
 zlib1g-dev
 
-apt-get install -y --no-install-recommends thonny python3-pip
-rm /usr/lib/python3*/EXTERNALLY-MANAGED
-pip3 install --user -r /install/requirements.txt
+apt-get install -y --no-install-recommends thonny python3-pip python3-venv python3-dev
+
+# rm /usr/lib/python3*/EXTERNALLY-MANAGED
+# pip3 install --user -r /install/requirements.txt
+
+python3 -m venv /opt/venv
+/opt/venv/bin/pip install -r /install/requirements.txt
+# echo 'export PATH="/opt/venv/bin:$PATH"' >> /etc/profile.d/python_venv.sh
 
 ln -s /usr/bin/libreoffice /usr/bin/LO
 

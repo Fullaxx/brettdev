@@ -100,8 +100,9 @@ RUN echo "\n# Set Keyboard Rate\nxset r rate 195 35" >>/usr/share/ubuntu-desktop
 
 # ------------------------------------------------------------------------------
 # Adjust bash prompt
-COPY conf/dot_bashrc /usr/share/ubuntu-desktop/
+COPY conf/dot_bashrc conf/etc_bash_bashrc /usr/share/ubuntu-desktop/
 RUN cat /usr/share/ubuntu-desktop/dot_bashrc >>/root/.bashrc
+RUN cat /usr/share/ubuntu-desktop/etc_bash_bashrc >>/etc/bash.bashrc
 
 # ------------------------------------------------------------------------------
 # Add configuration files for bluefish, geany, terminology

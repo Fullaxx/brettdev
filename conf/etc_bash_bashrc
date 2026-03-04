@@ -1,0 +1,11 @@
+
+# Add colorless function
+colorless() {
+  pygmentize -O style=gruvbox-dark $1 | less -RN
+}
+
+# Claude
+export PATH="$HOME/.local/bin:$PATH"
+
+# Python venv
+export PATH="/opt/venv/bin:$PATH"
