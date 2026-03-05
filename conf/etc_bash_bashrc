@@ -9,3 +9,5 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # Python venv
 export PATH="/opt/venv/bin:$PATH"
+
+hsetroot -center /usr/share/backgrounds/snowglobefluorescence1HDfree.jpg
