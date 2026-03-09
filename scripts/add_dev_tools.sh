@@ -111,6 +111,7 @@ pixz \
 plzip \
 psmisc \
 pv \
+recordmydesktop \
 rsync \
 run-one \
 rust-markdown \
