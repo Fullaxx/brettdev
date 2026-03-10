@@ -28,6 +28,9 @@ ipython
 
 matplotlib
 
+# readl xlsx files
+openpyxl
+
 #openbb
 # XXX openbb[all] - this appears to include dependency hell
 #openbb-alpha-vantage
@@ -89,6 +92,9 @@ streamlit-lightweight-charts
 rel
 websocket-client
 wsaccel
+
+# readl xls files
+xlrd
 
 xxhash
 
