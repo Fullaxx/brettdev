@@ -22,6 +22,7 @@ cscope \
 curl \
 ddd \
 diffstat \
+dnsutils \
 dos2unix \
 doxygen \
 dtach \
