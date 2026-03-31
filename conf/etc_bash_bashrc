@@ -7,6 +7,10 @@ colorless() {
 # Claude
 export PATH="$HOME/.local/bin:$PATH"
 
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="${BUN_INSTALL}/bin:$PATH"
+
 # Python venv
 export PATH="/opt/venv/bin:$PATH"
 

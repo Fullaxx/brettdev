@@ -30,6 +30,10 @@ RUN /install/scripts/add_dev_tools.sh
 RUN /install/scripts/add_claude_code_native.sh
 
 # ------------------------------------------------------------------------------
+# Install bun
+RUN /install/scripts/add_bun.sh
+
+# ------------------------------------------------------------------------------
 # Install Docker Binary
 # RUN /install/scripts/add_docker_binary.sh
 RUN /install/scripts/add_docker_ppa.sh
