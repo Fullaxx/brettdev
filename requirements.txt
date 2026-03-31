@@ -28,9 +28,6 @@ ipython
 
 matplotlib
 
-# readl xlsx files
-openpyxl
-
 #openbb
 # XXX openbb[all] - this appears to include dependency hell
 #openbb-alpha-vantage
@@ -47,6 +44,9 @@ openpyxl
 #openbb-tmx
 #openbb-tradier
 #openbb-wsj
+
+# Read xlsx Excel files
+openpyxl
 
 # Pandas 2.2.0 has a memory leak
 # This should have been fixed in pandas 2.2.3
@@ -93,7 +93,7 @@ rel
 websocket-client
 wsaccel
 
-# readl xls files
+# Read xls Excel files
 xlrd
 
 xxhash
