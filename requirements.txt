@@ -62,6 +62,8 @@ TA-Lib
 
 plotly
 
+polars
+
 pudb
 
 pygments
