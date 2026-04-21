@@ -144,6 +144,8 @@ tzdata \
 uftrace \
 universal-ctags \
 unzip \
+uuid-dev \
+uuid-runtime \
 valgrind \
 vim \
 vim-gtk3 \
