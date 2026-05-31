@@ -28,6 +28,8 @@ ipython
 
 matplotlib
 
+msgspec
+
 #openbb
 # XXX openbb[all] - this appears to include dependency hell
 #openbb-alpha-vantage
@@ -47,6 +49,8 @@ matplotlib
 
 # Read xlsx Excel files
 openpyxl
+
+orjson
 
 # Pandas 2.2.0 has a memory leak
 # This should have been fixed in pandas 2.2.3
@@ -71,6 +75,8 @@ pybase64
 pygments
 
 # pyqtgraph
+
+pysimdjson
 
 # Python bindings for ZMQ
 pyzmq
