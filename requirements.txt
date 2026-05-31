@@ -66,6 +66,8 @@ polars
 
 pudb
 
+pybase64
+
 pygments
 
 # pyqtgraph
