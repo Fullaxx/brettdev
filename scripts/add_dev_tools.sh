@@ -159,7 +159,8 @@ xxd \
 xxhash \
 yaru-theme-icon \
 zip \
-zlib1g-dev
+zlib1g-dev \
+zstd libzstd-dev
 
 apt-get install -y --no-install-recommends thonny python3-pip python3-venv python3-dev
 
