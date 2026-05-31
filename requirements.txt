@@ -26,6 +26,9 @@ grip
 
 ipython
 
+# Drop-in gzip replacement accelerated by Intel AVX
+isal
+
 matplotlib
 
 msgspec
@@ -109,5 +112,10 @@ xlrd
 xxhash
 
 # yfinance
+
+# This library is the official-adjacent, heavily maintained, and feature-complete wrapper for Zstd maintained by Gregory Szorc.
+zstandard
+# This library is a much older, independent project maintained by Sergey Dryabzhinsky (The Legacy Simple Wrapper)
+#python-zstd
 
 zxc-compress
