@@ -50,7 +50,7 @@ msgspec
 #openbb-tradier
 #openbb-wsj
 
-# Read xlsx Excel files
+# Read/Write xlsx Excel files
 openpyxl
 
 orjson
@@ -81,6 +81,9 @@ pygments
 
 pysimdjson
 
+# Read/Write docx Excel files
+python-docx
+
 # Python bindings for ZMQ
 pyzmq
 
@@ -106,7 +109,7 @@ rel
 websocket-client
 wsaccel
 
-# Read xls Excel files
+# Read/Write xls Excel files
 xlrd
 
 xxhash
