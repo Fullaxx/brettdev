@@ -1,0 +1,79 @@
+# ------------------------------------------------------------------------------
+# Pull base image
+FROM ghcr.io/fullaxx/brettdev:latest
+LABEL author="Brett Kuskie <fullaxx@gmail.com>"
+
+# ------------------------------------------------------------------------------
+# Set environment variables
+ENV DEBIAN_FRONTEND="noninteractive"
+ENV TZ="UTC"
+
+# ------------------------------------------------------------------------------
+# Install claude code
+RUN /install/scripts/add_claude_code_native.sh
+
+# ------------------------------------------------------------------------------
+# Install bun
+RUN /install/scripts/add_bun.sh
+
+# ------------------------------------------------------------------------------
+# Install Docker Binary
+# RUN /install/scripts/add_docker_binary.sh
+RUN /install/scripts/add_docker_repo.sh
+
+# ------------------------------------------------------------------------------
+# Install PostGres 17
+RUN /install/scripts/add_postgres17_repo.sh
+
+# ------------------------------------------------------------------------------
+# Install qlibc
+RUN /install/scripts/add_qlibc.sh
+
+# ------------------------------------------------------------------------------
+# Install lazygit
+RUN /install/scripts/add_lazygit.sh
+
+# ------------------------------------------------------------------------------
+# Install btop++
+RUN /install/scripts/add_btop.sh
+
+# ------------------------------------------------------------------------------
+# Install git delta
+RUN /install/scripts/add_git_delta.sh
+
+# ------------------------------------------------------------------------------
+# Install websocat
+RUN /install/scripts/add_websocat.sh
+
+# ------------------------------------------------------------------------------
+# (DISABLED) Install Draw.io
+# RUN /install/scripts/add_drawio_desktop.sh
+
+# ------------------------------------------------------------------------------
+# (DISABLED) Install kaitai-struct compiler and visualizer
+# RUN /install/scripts/add_kaitai_struct.sh
+
+# ------------------------------------------------------------------------------
+# Install Chrome
+RUN /install/scripts/add_chrome.sh
+
+# ------------------------------------------------------------------------------
+# Install VSCode
+RUN /install/scripts/add_vscode.sh
+
+# ------------------------------------------------------------------------------
+# (DISABLED) Install libcorrect
+# RUN /install/scripts/add_libcorrect.sh
+
+# ------------------------------------------------------------------------------
+# (DISABLED) Install libaff3ct.sh
+# RUN /install/scripts/add_libaff3ct.sh
+
+# ------------------------------------------------------------------------------
+# (DISABLED) Install GnuRadio
+# RUN /install/scripts/add_gnuradio.sh
+# RUN /install/scripts/add_gnuradio_ppa.sh
+
+# ------------------------------------------------------------------------------
+# (DISABLED) Install Eclipse
+# RUN ECLPKG="CPP" /app/scripts/install_eclipse.sh

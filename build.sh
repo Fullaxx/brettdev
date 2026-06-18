@@ -6,3 +6,4 @@
 
 git pull
 docker build -t "ghcr.io/fullaxx/brettdev" .
+docker build -t "ghcr.io/fullaxx/brettdev-full" -f Dockerfile.full .
