@@ -53,6 +53,8 @@ msgspec
 # Read/Write xlsx Excel files
 openpyxl
 
+opensearch-py
+
 orjson
 
 # Pandas 2.2.0 has a memory leak
