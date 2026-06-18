@@ -24,9 +24,17 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build and push
+      - name: Build and push brettdev
         uses: docker/build-push-action@v6
         with:
           context: .
           push: true
           tags: ghcr.io/fullaxx/brettdev:latest
+
+      - name: Build and push brettdev-full
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: Dockerfile.full
+          push: true
+          tags: ghcr.io/fullaxx/brettdev-full:latest
