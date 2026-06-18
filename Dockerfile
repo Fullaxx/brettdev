@@ -39,6 +39,10 @@ RUN /install/scripts/add_bun.sh
 RUN /install/scripts/add_docker_ppa.sh
 
 # ------------------------------------------------------------------------------
+# Install PostGres 17
+RUN /install/scripts/add_postgres17_ppa.sh
+
+# ------------------------------------------------------------------------------
 # Install qlibc
 RUN /install/scripts/add_qlibc.sh
 
