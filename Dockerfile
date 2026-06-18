@@ -36,11 +36,11 @@ RUN /install/scripts/add_bun.sh
 # ------------------------------------------------------------------------------
 # Install Docker Binary
 # RUN /install/scripts/add_docker_binary.sh
-RUN /install/scripts/add_docker_ppa.sh
+RUN /install/scripts/add_docker_repo.sh
 
 # ------------------------------------------------------------------------------
 # Install PostGres 17
-RUN /install/scripts/add_postgres17_ppa.sh
+RUN /install/scripts/add_postgres17_repo.sh
 
 # ------------------------------------------------------------------------------
 # Install qlibc
