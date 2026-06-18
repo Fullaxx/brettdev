@@ -59,7 +59,7 @@ RUN /install/scripts/add_chrome.sh
 
 # ------------------------------------------------------------------------------
 # Install VSCode
-RUN /install/scripts/add_vscode.sh
+RUN /install/scripts/add_vscode_repo.sh
 
 # ------------------------------------------------------------------------------
 # (DISABLED) Install libcorrect
