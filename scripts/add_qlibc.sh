@@ -2,7 +2,7 @@
 
 set -e
 
-QLIBCVERS="2.5.0"
+QLIBCVERS="2.5.1"
 QLIBCURL="https://github.com/wolkykim/qlibc/archive/refs/tags/v${QLIBCVERS}.tar.gz"
 
 mkdir -p /opt/code
