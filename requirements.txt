@@ -73,6 +73,7 @@ plotly
 
 polars
 
+# Python bindings for postgresql
 psycopg2-binary
 
 pudb
