@@ -73,6 +73,8 @@ plotly
 
 polars
 
+psycopg2-binary
+
 pudb
 
 pybase64
