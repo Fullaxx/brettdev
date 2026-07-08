@@ -2,11 +2,14 @@
 
 set -e
 
+KTVERS="0.11"
+KTFILE="kaitai-struct-compiler_${KTVERS}_all.deb"
+
 apt-get update
 apt-get install -y --no-install-recommends ruby openjdk-8-jre-headless
-wget https://github.com/kaitai-io/kaitai_struct_compiler/releases/download/0.10/kaitai-struct-compiler_0.10_all.deb
-dpkg -i kaitai-struct-compiler_0.10_all.deb
-rm kaitai-struct-compiler_0.10_all.deb
+wget https://github.com/kaitai-io/kaitai_struct_compiler/releases/download/${KTVERS}/${KTFILE}
+dpkg -i ${KTFILE}
+rm ${KTFILE}
 gem install kaitai-struct-visualizer
 pip install kaitaistruct
 apt-get clean
