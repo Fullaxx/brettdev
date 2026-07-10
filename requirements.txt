@@ -10,7 +10,8 @@ bcrypt
 # HTML parser
 beautifulsoup4
 
-edgartools
+#edgartools[ai]
+edgartools>=5.42.0
 
 # Random browser user-agent strings
 fake-useragent
