@@ -81,6 +81,8 @@ pudb
 
 pybase64
 
+pyflakes
+
 pygments
 
 # pyqtgraph
