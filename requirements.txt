@@ -108,6 +108,9 @@ scipy
 
 # seaborn
 
+# TEMP FIX
+pyarrow<=24.0.0
+# TEMP FIX
 streamlit
 streamlit-aggrid
 streamlit-lightweight-charts
