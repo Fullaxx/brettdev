@@ -92,6 +92,8 @@ pysimdjson
 # Read/Write docx Excel files
 python-docx
 
+pyyaml
+
 # Python bindings for ZMQ
 pyzmq
 
