@@ -135,3 +135,8 @@ zstandard
 #python-zstd
 
 zxc-compress
+
+# WEB GUI SUPPORT
+starlette
+uvicorn
+websockets
