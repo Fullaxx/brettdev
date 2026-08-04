@@ -7,6 +7,8 @@ LABEL author="Brett Kuskie <fullaxx@gmail.com>"
 # Set environment variables
 ENV DEBIAN_FRONTEND="noninteractive"
 ENV TZ="UTC"
+ENV VIRTUAL_ENV=/opt/venv
+ENV PATH="/opt/venv/bin:$PATH"
 
 # ------------------------------------------------------------------------------
 # Install requirements.txt and scripts
