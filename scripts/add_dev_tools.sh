@@ -78,6 +78,7 @@ libxml2-dev \
 libzmq3-dev \
 libreoffice \
 lsof \
+maim \
 man \
 mc \
 mdp \
@@ -153,6 +154,7 @@ vim-gtk3 \
 wget \
 wireshark \
 x11-apps \
+xdotool \
 xfe \
 xterm \
 xxd \
