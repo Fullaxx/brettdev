@@ -46,6 +46,10 @@ RUN /install/scripts/add_git_delta.sh
 RUN /install/scripts/add_websocat.sh
 
 # ------------------------------------------------------------------------------
+# Install golang
+RUN /install/scripts/add_golang.sh
+
+# ------------------------------------------------------------------------------
 # (DISABLED) Install Draw.io
 # RUN /install/scripts/add_drawio_desktop.sh
 
