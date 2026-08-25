@@ -2,18 +2,16 @@
 
 set -e
 
-#GOVERS="1.27.0"
-#GOURL="https://go.dev/dl/go${GOVERS}.linux-amd64.tar.gz"
+GOVERS="1.27.0"
+GOFILE="go${GOVERS}.linux-amd64.tar.gz"
+GOURL="https://go.dev/dl/${GOFILE}"
 
-DLPATH=`curl https://go.dev/dl/ | grep 'download downloadBox' | grep linux-amd64 | awk -F\" '{print $4}'`
-GOURL="https://go.dev${DLPATH}"
+GOSHA256=$(curl -fsSL "https://go.dev/dl/?mode=json&include=all" | jq -r --arg f "${GOFILE}" '.[].files[] | select(.filename==$f) | .sha256')
+test -n "${GOSHA256}"
 
-GOFILE="go.tar.gz"
+curl -fsSL -o "${GOFILE}" "${GOURL}"
+echo "${GOSHA256}  ${GOFILE}" | sha256sum -c -
 
-wget ${GOURL} -O ${GOFILE}
 rm -rf /usr/local/go
-tar -C /usr/local -xzf ${GOFILE}
+tar -C /usr/local -xzf "${GOFILE}"
 rm ${GOFILE}
-
-ln -sf /usr/local/go/bin/go /usr/bin/go
-ln -sf /usr/local/go/bin/gofmt /usr/bin/gofmt

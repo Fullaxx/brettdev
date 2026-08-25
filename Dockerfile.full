@@ -7,6 +7,11 @@ LABEL author="Brett Kuskie <fullaxx@gmail.com>"
 # Set environment variables
 ENV DEBIAN_FRONTEND="noninteractive"
 ENV TZ="UTC"
+ENV GOPATH="/opt/go"
+ENV GOBIN="/opt/go/bin"
+ENV GOMODCACHE="/opt/go/pkg/mod"
+ENV GOCACHE="/opt/go/cache"
+ENV PATH="/opt/go/bin:/usr/local/go/bin:${PATH}"
 
 # ------------------------------------------------------------------------------
 # Install claude code
@@ -48,6 +53,19 @@ RUN /install/scripts/add_websocat.sh
 # ------------------------------------------------------------------------------
 # Install golang
 RUN /install/scripts/add_golang.sh
+
+# ------------------------------------------------------------------------------
+# Install Go developer tools
+RUN /install/scripts/add_golang_tools.sh
+
+# ------------------------------------------------------------------------------
+# Pre-stage the Go module cache (mirrors the pip pre-staging in the base image).
+# Deliberately NOT locked to GOPROXY=off/GOTOOLCHAIN=local the way ubrun/ubdev
+# are -- brettdev has real internet some of the time, and should still be able
+# to `go get` something new when it does. This just means anything already
+# staged here builds/tests with zero network either way.
+COPY go.mod go.sum /install/
+RUN cd /install && go mod download
 
 # ------------------------------------------------------------------------------
 # (DISABLED) Install Draw.io
