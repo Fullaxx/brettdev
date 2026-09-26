@@ -31,6 +31,7 @@ eterm \
 evince \
 file \
 firefox \
+flatpak \
 galculator \
 gdb \
 geany \
