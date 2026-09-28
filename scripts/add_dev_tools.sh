@@ -32,6 +32,7 @@ evince \
 file \
 firefox \
 flatpak \
+fonts-anonymous-pro \
 galculator \
 gdb \
 geany \
