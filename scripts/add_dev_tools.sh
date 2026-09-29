@@ -102,7 +102,6 @@ ngrep \
 nload \
 nmap \
 nmon \
-ntopng \
 nnn \
 openssh-client \
 p0f \
@@ -165,6 +164,9 @@ yaru-theme-icon \
 zip \
 zlib1g-dev \
 zstd libzstd-dev
+
+# DISABLED 260929
+# ntopng
 
 apt-get install -y --no-install-recommends thonny python3-pip python3-venv python3-dev
 
