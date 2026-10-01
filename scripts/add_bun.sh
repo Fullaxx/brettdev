@@ -11,5 +11,4 @@ if [ ! -L bunx ]; then
   ln -s bun bunx
 fi
 
-#export BUN_INSTALL="$HOME/.bun"
-#export PATH="${BUN_INSTALL}/bin:$PATH"
+# Runtime BUN_INSTALL and ~/.bun/bin on PATH are set in conf/etc_bash_bashrc (-> /etc/bash.bashrc).

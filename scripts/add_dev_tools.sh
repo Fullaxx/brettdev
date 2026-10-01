@@ -175,7 +175,7 @@ apt-get install -y --no-install-recommends thonny python3-pip python3-venv pytho
 
 python3 -m venv /opt/venv
 /opt/venv/bin/pip install -r /install/requirements.txt
-# echo 'export PATH="/opt/venv/bin:$PATH"' >> /etc/profile.d/python_venv.sh
+# Runtime VIRTUAL_ENV/PATH for /opt/venv are set in conf/etc_bash_bashrc (-> /etc/bash.bashrc), not /etc/profile.d: desktop terminals are non-login shells.
 
 ln -s /usr/bin/libreoffice /usr/bin/LO
 

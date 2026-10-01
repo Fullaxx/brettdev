@@ -1,4 +1,49 @@
 
+# ==============================================================================
+# brettdev additions to /etc/bash.bashrc
+#
+# Source: conf/etc_bash_bashrc in the brettdev repo. The Dockerfile appends this
+# file to /etc/bash.bashrc at build time.
+#
+# Who reads it: every interactive bash shell. Non-login shells (the desktop's
+# terminals, `docker exec -it ... bash`) read /etc/bash.bashrc directly; login
+# shells read it through /etc/profile.
+#
+# Why runtime environment setup lives here: the Dockerfile ENV directives are
+# build-time settings. They reach RUN steps, PID 1 and `docker exec` shells, but
+# not the VNC desktop. /app/tiger.sh (from the ubuntu-desktop base image) starts
+# the desktop with `sudo tigervncserver`, and sudo's env_reset + secure_path
+# (/etc/sudoers) replace PATH and drop VIRTUAL_ENV and the GO* variables for
+# every process in the desktop session. The block below restores them.
+#
+# Why not /etc/profile.d: only login shells read it, and the desktop's
+# terminals are non-login shells.
+#
+# What this file sets:
+#   - the Python venv and Go environment (guarded: nothing is added twice, and
+#     the Go settings only apply where Go is installed, i.e. brettdev-full)
+#   - PATH entries for Claude Code (~/.local/bin) and bun (~/.bun/bin)
+#   - the colorless() helper and the desktop wallpaper
+#
+# Known gap: GUI apps launched from the openbox menu don't read this file, so
+# they still see the reset environment. See PYTHON_VENV.md.
+# ==============================================================================
+
+# Python venv + Go: restore what sudo drops (see the header above).
+# The GO* values must match the ENV block in Dockerfile.full.
+[ -d /opt/venv ] && export VIRTUAL_ENV=/opt/venv
+if [ -d /usr/local/go ]; then
+  export GOPATH=/opt/go GOBIN=/opt/go/bin GOMODCACHE=/opt/go/pkg/mod GOCACHE=/opt/go/cache
+fi
+for _p in /opt/venv/bin /usr/local/go/bin /opt/go/bin; do
+  case ":${PATH}:" in
+    *":${_p}:"*) ;;
+    *) [ -d "${_p}" ] && PATH="${_p}:${PATH}" ;;
+  esac
+done
+unset _p
+export PATH
+
 # Add colorless function
 colorless() {
   pygmentize -O style=gruvbox-dark $1 | less -RN

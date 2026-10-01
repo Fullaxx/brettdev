@@ -7,6 +7,11 @@ LABEL author="Brett Kuskie <fullaxx@gmail.com>"
 # Set environment variables
 ENV DEBIAN_FRONTEND="noninteractive"
 ENV TZ="UTC"
+# The GO* variables and PATH are BUILD-TIME settings: RUN steps below need them
+# (add_golang_tools.sh's `go install`, `go mod download`). They also reach PID 1
+# and `docker exec` shells, but NOT the VNC desktop session: /app/tiger.sh starts
+# it with `sudo tigervncserver`, and sudo's env_reset/secure_path drop them.
+# Runtime shells get them from conf/etc_bash_bashrc -- keep the values in sync.
 ENV GOPATH="/opt/go"
 ENV GOBIN="/opt/go/bin"
 ENV GOMODCACHE="/opt/go/pkg/mod"

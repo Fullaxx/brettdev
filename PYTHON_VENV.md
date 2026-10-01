@@ -46,16 +46,24 @@ python3 -m venv /opt/venv
 
 ### Exposing the venv on `PATH`
 
-`Dockerfile` sets:
+It takes two layers, because no single mechanism reaches every process in this image.
+
+**Build time: `Dockerfile` `ENV`.**
 
 ```dockerfile
 ENV VIRTUAL_ENV=/opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
 ```
 
-right alongside the other environment variables, near the top of the build. Because Docker `ENV` instructions are inherited through `FROM`, this makes `/opt/venv/bin` the default `python3`/`pip3` everywhere — interactive shells, non-interactive `RUN`/`CMD`/`ENTRYPOINT` steps in this Dockerfile, and every layered install script in `Dockerfile.full` (which builds `FROM ghcr.io/fullaxx/brettdev:latest`) — with no `source .../activate` required anywhere.
+Docker `ENV` instructions are inherited through `FROM`, so every `RUN` step in `Dockerfile` and every layered install script in `Dockerfile.full` (which builds `FROM ghcr.io/fullaxx/brettdev:latest`) gets the venv's `python3`/`pip3`, with no `source .../activate` required. The same values also reach the container's PID 1 and `docker exec` shells.
 
-This image originally exposed the venv only via `conf/etc_bash_bashrc` (copied in and appended to `/etc/bash.bashrc`), which works for interactive shells but not for non-interactive build steps or downstream images. That was replaced with the `ENV`-based approach above once it was confirmed safe: every script in `scripts/` and the inherited base image's startup chain (`app.sh` → `imagestart.sh` → `tiger.sh`) were checked and found to contain no bare `python3`/`pip` invocations that a global `PATH` change could redirect, and both `Dockerfile` and `Dockerfile.full` build cleanly end-to-end with it in place. The same mechanism is used in the `fullaxx/ubrun` and `fullaxx/ubdev` images, where it was introduced first.
+**Runtime: `conf/etc_bash_bashrc` (appended to `/etc/bash.bashrc`).**
+
+The VNC desktop never sees those `ENV` values. The base image's `/app/tiger.sh` starts the desktop with `exec sudo ... tigervncserver`, and sudo's `env_reset` + `secure_path` (`/etc/sudoers`) replace `PATH` and drop `VIRTUAL_ENV` (and `Dockerfile.full`'s `GO*` variables) for every process in the session: openbox, the terminals, and anything started from them. `conf/etc_bash_bashrc` restores them for every interactive bash shell. It's `/etc/bash.bashrc` rather than `/etc/profile.d/` because the desktop's terminals are non-login shells, which never read `/etc/profile.d/`. Its entries are guarded, so `docker exec` shells, which already have the `ENV` values, don't get duplicates.
+
+GUI apps launched from the openbox menu don't read `/etc/bash.bashrc`, so they still see the reset environment. Point those tools at `/opt/venv/bin/python3` explicitly.
+
+**History.** This image originally exposed the venv only via `conf/etc_bash_bashrc`, which works for interactive shells but not for non-interactive build steps or downstream images. It then moved to the `ENV`-based approach, introduced first in the `fullaxx/ubrun` and `fullaxx/ubdev` images, which don't start through `sudo`, so there `ENV` does reach their shells. Before that switch, every script in `scripts/` and the base image's startup chain (`app.sh` → `imagestart.sh` → `tiger.sh`) was checked for bare `python3`/`pip` calls a global `PATH` change could redirect. That check missed `tiger.sh`'s `sudo`, which discards the `ENV` values at runtime, so both layers are now in place.
 
 ## Reference
 
