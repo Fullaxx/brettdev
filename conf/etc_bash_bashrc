@@ -50,10 +50,10 @@ colorless() {
 }
 
 # Claude
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="${PATH}:${HOME}/.local/bin"
 
 # bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="${BUN_INSTALL}/bin:$PATH"
+export BUN_INSTALL="${HOME}/.bun"
+export PATH="${PATH}:${BUN_INSTALL}/bin"
 
 hsetroot -center /usr/share/backgrounds/snowglobefluorescence1HDfree.jpg
