@@ -34,6 +34,10 @@ RUN /install/scripts/add_firefox_ppa.sh
 RUN /install/scripts/add_dev_tools.sh
 
 # ------------------------------------------------------------------------------
+# Install fonts: glyph fallback, coding fonts, Nerd Font icons (see FONTS.md)
+RUN /install/scripts/add_fonts.sh
+
+# ------------------------------------------------------------------------------
 # Install wallpaper scripts and configuration files
 COPY bg/snowglobefluorescence1HDfree.jpg /usr/share/backgrounds/
 COPY conf/menu.xml /usr/share/ubuntu-desktop/openbox/

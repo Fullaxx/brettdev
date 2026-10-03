@@ -17,6 +17,19 @@ directives put it (and, in brettdev-full, Go) on `PATH` at build time; inside th
 `conf/etc_bash_bashrc` (appended to `/etc/bash.bashrc`) does it for every terminal. Both are needed — see
 [PYTHON_VENV.md](PYTHON_VENV.md) for why.
 
+## Fonts
+
+`scripts/add_fonts.sh` installs the image's fonts:
+- fallback fonts, so symbols (including Claude Code's UI glyphs), emoji and CJK render instead of showing as
+  hex boxes;
+- fonts compatible with Microsoft Office's (Arial, Times New Roman, Courier New, Calibri, Cambria) and a
+  MathML font;
+- a set of coding fonts;
+- Nerd Font icons.
+
+See [FONTS.md](FONTS.md) for what each font provides, where ligatures work, and the gotchas. The tools in
+[tests/fonts/](tests/fonts/README.md) re-check all of it; start with `tests/fonts/check_fonts.sh`.
+
 ## Build locally
 ```
 # Build the base image

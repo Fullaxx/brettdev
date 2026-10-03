@@ -44,10 +44,6 @@ RUN /install/scripts/add_qlibc.sh
 RUN /install/scripts/add_lazygit.sh
 
 # ------------------------------------------------------------------------------
-# Install Nerd Fonts symbols (icon fallback for any terminal font)
-RUN /install/scripts/add_nerd_fonts.sh
-
-# ------------------------------------------------------------------------------
 # Install btop++
 RUN /install/scripts/add_btop.sh
 
