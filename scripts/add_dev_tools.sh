@@ -33,6 +33,8 @@ file \
 firefox \
 flatpak \
 fonts-anonymous-pro \
+fonts-noto-color-emoji \
+fonts-noto-core \
 galculator \
 gdb \
 geany \
