@@ -33,8 +33,15 @@ file \
 firefox \
 flatpak \
 fonts-anonymous-pro \
+fonts-cascadia-code \
+fonts-firacode \
+fonts-go \
+fonts-hack \
+fonts-jetbrains-mono \
+fonts-mononoki \
 fonts-noto-color-emoji \
 fonts-noto-core \
+fonts-ubuntu \
 galculator \
 gdb \
 geany \
