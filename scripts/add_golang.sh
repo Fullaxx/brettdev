@@ -2,7 +2,7 @@
 
 set -e
 
-GOVERS="1.27.0"
+GOVERS="1.27.3"
 GOFILE="go${GOVERS}.linux-amd64.tar.gz"
 GOURL="https://go.dev/dl/${GOFILE}"
 
