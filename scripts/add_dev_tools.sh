@@ -28,6 +28,7 @@ dos2unix \
 doxygen \
 dtach \
 eterm \
+ethtool \
 evince \
 file \
 firefox \
@@ -54,6 +55,7 @@ hexer \
 iftop \
 inetutils-traceroute \
 iperf \
+iperf3 \
 iproute2 \
 iputils-ping \
 jq \
@@ -78,6 +80,7 @@ libssl-dev \
 libxml2-dev \
 libzmq3-dev \
 libreoffice \
+lintian \
 lsof \
 maim \
 man \
@@ -115,12 +118,15 @@ plzip \
 psmisc \
 pv \
 recordmydesktop \
+rpm \
+rpmlint \
 rsync \
 run-one \
 rust-markdown \
 sakura \
 screen \
 scrot \
+shellcheck \
 silversearcher-ag \
 software-properties-common \
 sqlite3 \
@@ -159,6 +165,7 @@ xfe \
 xterm \
 xxd \
 xxhash \
+yamllint \
 yaru-theme-icon \
 zip \
 zlib1g-dev \
