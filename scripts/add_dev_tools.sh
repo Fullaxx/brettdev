@@ -9,6 +9,7 @@ ansible \
 apt-transport-https \
 astyle \
 bash-completion \
+bc \
 bluefish \
 bridge-utils \
 build-essential \
