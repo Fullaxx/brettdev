@@ -34,6 +34,10 @@ RUN /install/scripts/add_firefox_ppa.sh
 RUN /install/scripts/add_dev_tools.sh
 
 # ------------------------------------------------------------------------------
+# Install gh from GitHub's own repo (Ubuntu's 2.45 is broken by GitHub's API changes)
+RUN /install/scripts/add_gh_repo.sh
+
+# ------------------------------------------------------------------------------
 # Install fonts: glyph fallback, coding fonts, Nerd Font icons (see FONTS.md)
 RUN /install/scripts/add_fonts.sh
 
