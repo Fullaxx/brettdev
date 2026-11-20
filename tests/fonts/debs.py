@@ -16,7 +16,7 @@ Subcommands:
 
 Environment:
   FONTTEST_WORK   work dir (default ${TMPDIR:-/tmp}/fonttest)
-  DIST            release (default noble); DIST-updates is searched before DIST
+  DIST            release (default resolute); DIST-updates is searched before DIST
   MIRROR          default http://archive.ubuntu.com/ubuntu
   ARCH            default amd64
   COMPONENTS      default "main universe"
@@ -36,7 +36,7 @@ import time
 import urllib.request
 
 WORK = os.environ.get("FONTTEST_WORK") or os.path.join(os.environ.get("TMPDIR", "/tmp"), "fonttest")
-DIST = os.environ.get("DIST", "noble")
+DIST = os.environ.get("DIST", "resolute")
 MIRROR = os.environ.get("MIRROR", "http://archive.ubuntu.com/ubuntu").rstrip("/")
 ARCH = os.environ.get("ARCH", "amd64")
 COMPONENTS = os.environ.get("COMPONENTS", "main universe").split()

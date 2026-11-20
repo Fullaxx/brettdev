@@ -39,9 +39,10 @@ rm -rf /var/lib/apt/lists/* /var/tmp/* /tmp/*
 
 # Symbols-only Nerd Font: the icon glyphs (devicons, octicons, codicons,
 # Font Awesome, Material Design, powerline) that lazygit, starship, eza and
-# nvim plugins draw. Not packaged for noble. Upstream's fontconfig snippet
-# makes "monospace" and ~400 coding font families prefer it for those
-# codepoints, so icons render no matter which font the terminal uses.
+# nvim plugins draw. Not packaged for noble or resolute. Upstream's
+# fontconfig snippet makes "monospace" and ~400 coding font families
+# prefer it for those codepoints, so icons render no matter which font the
+# terminal uses.
 
 NFVERS="3.5.1"
 NFURL="https://github.com/ryanoasis/nerd-fonts/releases/download/v${NFVERS}/NerdFontsSymbolsOnly.tar.xz"

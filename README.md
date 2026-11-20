@@ -10,6 +10,15 @@
 | `ghcr.io/fullaxx/brettdev` | Base image: Ubuntu desktop + dev tools from the Ubuntu repo |
 | `ghcr.io/fullaxx/brettdev-full` | Full image: brettdev + third-party tools (Claude, Bun, Docker, Postgres, Chrome, VSCode, etc.) |
 
+## Tags
+
+GitHub Actions builds and pushes both images whenever their branch gets a push:
+
+| Tag | Branch | Ubuntu | Built from |
+|---|---|---|---|
+| `latest` | `master` | 26.04 | `ghcr.io/fullaxx/ubuntu-desktop:latest` |
+| `24.04` | `24.04` | 24.04 | `ghcr.io/fullaxx/ubuntu-desktop:24.04` |
+
 ## Python and Go environment
 
 Python packages from `requirements.txt` live in a virtual environment at `/opt/venv`. The Dockerfile `ENV`

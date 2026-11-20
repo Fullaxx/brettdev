@@ -5,11 +5,13 @@ set -e
 apt-get update
 
 apt-get install -y --no-install-recommends \
+7zip-rar \
 ansible \
 apt-transport-https \
 astyle \
 bash-completion \
 bc \
+bind9-dnsutils \
 bluefish \
 bridge-utils \
 build-essential \
@@ -18,13 +20,14 @@ calc \
 cgdb \
 chaosreader \
 cmake \
+cmark-gfm \
 colordiff \
 colortail \
 cscope \
 curl \
 ddd \
+dhex \
 diffstat \
-dnsutils \
 dos2unix \
 doxygen \
 dtach \
@@ -49,7 +52,6 @@ hping3 \
 htop \
 hexcompare \
 hexcurse \
-hexdiff \
 hexedit \
 hexer \
 iftop \
@@ -107,7 +109,6 @@ nmon \
 nnn \
 openssh-client \
 p0f \
-p7zip-rar \
 pandoc \
 parallel \
 patch \
@@ -122,7 +123,6 @@ rpm \
 rpmlint \
 rsync \
 run-one \
-rust-markdown \
 sakura \
 screen \
 scrot \
@@ -155,6 +155,7 @@ unzip \
 uuid-dev \
 uuid-runtime \
 valgrind \
+vbindiff \
 vim \
 vim-gtk3 \
 wget \

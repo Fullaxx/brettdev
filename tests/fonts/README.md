@@ -55,7 +55,7 @@ terminator -u -x tests/fonts/glyphtest.sh --hold    # look at it in a real termi
 | `vtecap.py` | Shared helpers for the three renderers. They capture offscreen and wait until VTE has actually drawn; a fixed delay sometimes grabbed blank frames. |
 | `glyphtest.sh` | Prints Claude Code's glyphs, emoji, CJK, Powerline and icons in the current terminal. |
 | `screenshot_window.sh` | Captures the window a process lives in (walks up the process tree, then `xdotool --pid`, `maim -i`); `--zoom` enlarges a region to read the codepoint inside a hex box. |
-| `upstream_versions.sh` | Latest upstream release of each font next to noble's packaged version. |
+| `upstream_versions.sh` | Latest upstream release of each font next to its packaged version (debs.py's `DIST`, default resolute). |
 | `make_doc_images.sh` | Regenerates `docs/fonts/*.png` with the tools above. |
 
 ## Recipes: how each finding was reached
