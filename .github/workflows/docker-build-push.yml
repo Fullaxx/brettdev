@@ -1,9 +1,14 @@
 name: Build and Push to ghcr.io
 
+# Every push to master builds brettdev and brettdev-full and pushes both to ghcr.io as
+# :latest and :26.04 (the same images), plus :master-<short sha>, which never moves.
+# Each branch runs the workflow in its own commits: the 24.04 branch has its own copy,
+# which publishes :24.04.
 on:
   push:
     branches:
       - master
+  # Allows you to run this workflow by hand from the Actions tab (master only, see the job's if)
   workflow_dispatch:
 
 # A newer push cancels the run still in progress on the same branch, so an
@@ -14,6 +19,9 @@ concurrency:
 
 jobs:
   build-and-push:
+    # Only master publishes :latest and :26.04, also when run by hand
+    # (Dockerfile.full builds FROM brettdev:latest, which only this run produces)
+    if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -30,12 +38,39 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      # master is Ubuntu 26.04: :latest and :26.04 are the same images, plus master-<short sha>
+      - name: Tags and labels for brettdev
+        id: meta
+        uses: docker/metadata-action@v6
+        with:
+          images: ghcr.io/fullaxx/brettdev
+          tags: |
+            type=raw,value=latest
+            type=raw,value=26.04
+            type=sha,prefix={{branch}}-
+
+      - name: Tags and labels for brettdev-full
+        id: meta_full
+        uses: docker/metadata-action@v6
+        with:
+          images: ghcr.io/fullaxx/brettdev-full
+          tags: |
+            type=raw,value=latest
+            type=raw,value=26.04
+            type=sha,prefix={{branch}}-
+          labels: |
+            org.opencontainers.image.title=brettdev-full
+
+      # No Buildx and no layer cache: the default docker driver keeps brettdev in the
+      # runner's image store, where Dockerfile.full's FROM finds it, and these images
+      # are too big for the 10 GB Actions cache
       - name: Build and push brettdev
         uses: docker/build-push-action@v7
         with:
           context: .
           push: true
-          tags: ghcr.io/fullaxx/brettdev:latest
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
 
       - name: Build and push brettdev-full
         uses: docker/build-push-action@v7
@@ -43,4 +78,5 @@ jobs:
           context: .
           file: Dockerfile.full
           push: true
-          tags: ghcr.io/fullaxx/brettdev-full:latest
+          tags: ${{ steps.meta_full.outputs.tags }}
+          labels: ${{ steps.meta_full.outputs.labels }}

@@ -1,7 +1,7 @@
 # Ubuntu Desktop running Openbox in VNC for developers
 
 ## Base Docker Image
-[fullaxx/ubuntu-desktop](https://www.github.com/Fullaxx/ubuntu-desktop)
+[fullaxx/ubuntu-desktop](https://www.github.com/Fullaxx/ubuntu-desktop) 26.04 (x64), and 24.04 on its own branch
 
 ## Images
 
@@ -10,14 +10,28 @@
 | `ghcr.io/fullaxx/brettdev` | Base image: Ubuntu desktop + dev tools from the Ubuntu repo |
 | `ghcr.io/fullaxx/brettdev-full` | Full image: brettdev + third-party tools (Claude, Bun, Docker, Postgres, Chrome, VSCode, etc.) |
 
-## Tags
+## Branches and tags
+Each branch publishes its own tags of both images, rebuilt at every push:
 
-GitHub Actions builds and pushes both images whenever their branch gets a push:
+| Tag | Branch | Ubuntu | Python | GCC |
+| --- | --- | --- | --- | --- |
+| `:latest`, `:26.04` | [`master`](https://github.com/Fullaxx/brettdev/tree/master) | 26.04 (resolute) | 3.14 | 15 |
+| `:24.04` | [`24.04`](https://github.com/Fullaxx/brettdev/tree/24.04) | 24.04 (noble) | 3.12 | 13 |
 
-| Tag | Branch | Ubuntu | Built from |
-|---|---|---|---|
-| `latest` | `master` | 26.04 | `ghcr.io/fullaxx/ubuntu-desktop:latest` |
-| `24.04` | `24.04` | 24.04 | `ghcr.io/fullaxx/ubuntu-desktop:24.04` |
+- `:latest` tracks 26.04: every push to `master` publishes the same images as `:latest` and `:26.04`.
+- `24.04` gets maintenance updates and hand-picked features. Its README uses `:24.04` in every example.
+- Every push to `master` is also tagged `master-<short commit>`. These tags never move.
+- The examples below use `:latest`. Everything in this README works the same with `:26.04`.
+
+## Get the images
+```
+docker pull ghcr.io/fullaxx/brettdev
+docker pull ghcr.io/fullaxx/brettdev:26.04
+docker pull ghcr.io/fullaxx/brettdev:24.04
+docker pull ghcr.io/fullaxx/brettdev-full
+docker pull ghcr.io/fullaxx/brettdev-full:26.04
+docker pull ghcr.io/fullaxx/brettdev-full:24.04
+```
 
 ## Python and Go environment
 
