@@ -1,7 +1,10 @@
 # Ubuntu Desktop running Openbox in VNC for developers
 
+**This is the `24.04` branch:** Ubuntu 24.04 (noble), published as `ghcr.io/fullaxx/brettdev:24.04` and `ghcr.io/fullaxx/brettdev-full:24.04`. \
+It gets maintenance updates and hand-picked features. For the latest release (Ubuntu 26.04: `:latest` and `:26.04`), see the `master` branch and its [branches and tags](https://github.com/Fullaxx/brettdev#branches-and-tags).
+
 ## Base Docker Image
-[fullaxx/ubuntu-desktop](https://www.github.com/Fullaxx/ubuntu-desktop)
+[fullaxx/ubuntu-desktop](https://www.github.com/Fullaxx/ubuntu-desktop) 24.04 (x64)
 
 ## Images
 
@@ -10,16 +13,11 @@
 | `ghcr.io/fullaxx/brettdev` | Base image: Ubuntu desktop + dev tools from the Ubuntu repo |
 | `ghcr.io/fullaxx/brettdev-full` | Full image: brettdev + third-party tools (Claude, Bun, Docker, Postgres, Chrome, VSCode, etc.) |
 
-## Tags
-
-GitHub Actions builds and pushes both images whenever their branch gets a push:
-
-| Tag | Branch | Ubuntu | Built from |
-|---|---|---|---|
-| `latest` | `master` | 26.04 | `ghcr.io/fullaxx/ubuntu-desktop:latest` |
-| `24.04` | `24.04` | 24.04 | `ghcr.io/fullaxx/ubuntu-desktop:24.04` |
-
-This is the `24.04` branch: its images use the `24.04` tags.
+## Get the images
+```
+docker pull ghcr.io/fullaxx/brettdev:24.04
+docker pull ghcr.io/fullaxx/brettdev-full:24.04
+```
 
 ## Python and Go environment
 
