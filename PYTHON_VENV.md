@@ -55,7 +55,7 @@ ENV VIRTUAL_ENV=/opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
 ```
 
-Docker `ENV` instructions are inherited through `FROM`, so every `RUN` step in `Dockerfile` and every layered install script in `Dockerfile.full` (which builds `FROM ghcr.io/fullaxx/brettdev:latest`) gets the venv's `python3`/`pip3`, with no `source .../activate` required. The same values also reach the container's PID 1 and `docker exec` shells.
+Docker `ENV` instructions are inherited through `FROM`, so every `RUN` step in `Dockerfile` and every layered install script in `Dockerfile.full` (which builds `FROM ghcr.io/fullaxx/brettdev:24.04`) gets the venv's `python3`/`pip3`, with no `source .../activate` required. The same values also reach the container's PID 1 and `docker exec` shells.
 
 **Runtime: `conf/etc_bash_bashrc` (appended to `/etc/bash.bashrc`).**
 

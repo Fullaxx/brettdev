@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------
 # Pull base image
-FROM ghcr.io/fullaxx/brettdev:latest
+FROM ghcr.io/fullaxx/brettdev:24.04
 LABEL author="Brett Kuskie <fullaxx@gmail.com>"
 
 # ------------------------------------------------------------------------------

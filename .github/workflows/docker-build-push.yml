@@ -1,10 +1,18 @@
 name: Build and Push to ghcr.io
 
+# 24.04 branch: builds the :24.04 images (master's copy of this file builds :latest)
 on:
   push:
     branches:
-      - master
+      # Quoted: unquoted, YAML reads 24.04 as a number
+      - '24.04'
   workflow_dispatch:
+
+# A newer push cancels the run still in progress on the same branch, so an
+# older run can't finish last and leave older images on the tags
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build-and-push:
@@ -15,26 +23,26 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Log in to ghcr.io
-        uses: docker/login-action@v3
+        uses: docker/login-action@v4
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build and push brettdev
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           context: .
           push: true
-          tags: ghcr.io/fullaxx/brettdev:latest
+          tags: ghcr.io/fullaxx/brettdev:24.04
 
       - name: Build and push brettdev-full
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           context: .
           file: Dockerfile.full
           push: true
-          tags: ghcr.io/fullaxx/brettdev-full:latest
+          tags: ghcr.io/fullaxx/brettdev-full:24.04

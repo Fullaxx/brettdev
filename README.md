@@ -10,6 +10,17 @@
 | `ghcr.io/fullaxx/brettdev` | Base image: Ubuntu desktop + dev tools from the Ubuntu repo |
 | `ghcr.io/fullaxx/brettdev-full` | Full image: brettdev + third-party tools (Claude, Bun, Docker, Postgres, Chrome, VSCode, etc.) |
 
+## Tags
+
+GitHub Actions builds and pushes both images whenever their branch gets a push:
+
+| Tag | Branch | Ubuntu | Built from |
+|---|---|---|---|
+| `latest` | `master` | 26.04 | `ghcr.io/fullaxx/ubuntu-desktop:latest` |
+| `24.04` | `24.04` | 24.04 | `ghcr.io/fullaxx/ubuntu-desktop:24.04` |
+
+This is the `24.04` branch: its images use the `24.04` tags.
+
 ## Python and Go environment
 
 Python packages from `requirements.txt` live in a virtual environment at `/opt/venv`. The Dockerfile `ENV`
@@ -33,8 +44,8 @@ See [FONTS.md](FONTS.md) for what each font provides, where ligatures work, and 
 ## Build locally
 ```
 # Build the base image
-docker build -t ghcr.io/fullaxx/brettdev .
+docker build -t ghcr.io/fullaxx/brettdev:24.04 .
 
-# Build the full image (requires brettdev to be available locally or on ghcr.io)
-docker build -t ghcr.io/fullaxx/brettdev-full -f Dockerfile.full .
+# Build the full image (requires brettdev:24.04 to be available locally or on ghcr.io)
+docker build -t ghcr.io/fullaxx/brettdev-full:24.04 -f Dockerfile.full .
 ```

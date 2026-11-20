@@ -8,6 +8,6 @@ set -e
 
 git pull
 
-docker build -t "ghcr.io/fullaxx/brettdev" .
+docker build -t "ghcr.io/fullaxx/brettdev:24.04" .
 
-docker build -t "ghcr.io/fullaxx/brettdev-full" -f Dockerfile.full .
+docker build -t "ghcr.io/fullaxx/brettdev-full:24.04" -f Dockerfile.full .

@@ -18,11 +18,13 @@ calc \
 cgdb \
 chaosreader \
 cmake \
+cmark-gfm \
 colordiff \
 colortail \
 cscope \
 curl \
 ddd \
+dhex \
 diffstat \
 dnsutils \
 dos2unix \
@@ -155,6 +157,7 @@ unzip \
 uuid-dev \
 uuid-runtime \
 valgrind \
+vbindiff \
 vim \
 vim-gtk3 \
 wget \

@@ -8,14 +8,14 @@
 # later (libgs10-common recommends it). The image is removed afterwards.
 #
 # Usage: tests/fonts/docker_build_test.sh
-#   BASE=image  base image (default ghcr.io/fullaxx/ubuntu-desktop:latest)
+#   BASE=image  base image (default ghcr.io/fullaxx/ubuntu-desktop:24.04)
 #   TAG=name    test image tag (default brettdev-fonttest:tmp)
 #   KEEP=1      keep the image afterwards (docker run --rm -it brettdev-fonttest:tmp bash)
 
 set -e
 here=$(cd "$(dirname "$0")" && pwd)
 repo=$(cd "$here/../.." && pwd)
-BASE=${BASE:-ghcr.io/fullaxx/ubuntu-desktop:latest}
+BASE=${BASE:-ghcr.io/fullaxx/ubuntu-desktop:24.04}
 TAG=${TAG:-brettdev-fonttest:tmp}
 
 ctx=$(mktemp -d "${TMPDIR:-/tmp}/fonttest-ctx.XXXXXX")
