@@ -1,13 +1,16 @@
-name: Build and Push to ghcr.io
+name: CI
 
-# Every push to this branch builds brettdev and brettdev-full and pushes both to ghcr.io as :24.04.
-# 24.04 gets maintenance updates and hand-picked features; master publishes :latest and :26.04.
+# Every push to master or 24.04 builds brettdev and brettdev-full and pushes both to ghcr.io, tagged by branch:
+#   master -> :latest, :26.04 and :resolute, the same images
+#   24.04  -> :24.04 and :noble, the same images
+# plus :<branch>-<short sha> for each build, which never moves. The codename tags name each release the
+# way Ubuntu's own image does (ubuntu:resolute is ubuntu:26.04, ubuntu:noble is ubuntu:24.04).
+# The same file is in master and 24.04 (a push runs the ci.yml of the pushed commit), so a CI change goes
+# into both branches.
 on:
   push:
-    branches:
-      # Quoted: unquoted, YAML reads 24.04 as a number
-      - '24.04'
-  # Allows you to run this workflow by hand from the Actions tab (24.04 only, see the job's if)
+    branches: [ master, "24.04" ]   # quoted, or YAML reads it as a number
+  # Allows you to run this workflow by hand from the Actions tab (master and 24.04 only, see the job's if)
   workflow_dispatch:
 
 # A newer push cancels the run still in progress on the same branch, so an
@@ -18,9 +21,10 @@ concurrency:
 
 jobs:
   build-and-push:
-    # Only the 24.04 branch publishes :24.04, also when run by hand
-    # (Dockerfile.full builds FROM brettdev:24.04, which only this run produces)
-    if: github.ref == 'refs/heads/24.04'
+    # Only master and 24.04 publish, also when run by hand: each branch's Dockerfile.full builds FROM the
+    # brettdev tag that this run makes on it (brettdev:latest on master, brettdev:24.04 on 24.04), which on
+    # any other branch would be the published image instead of this run's
+    if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/24.04'
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -37,14 +41,21 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      # The image names, their only tag (:24.04) and the OCI labels
+      # master is Ubuntu 26.04 (:latest, :26.04 and :resolute), 24.04 is 24.04 (:24.04 and :noble), plus
+      # <branch>-<short sha> for each build (by branch name, so :latest stays with master even if GitHub's
+      # default branch changes)
       - name: Tags and labels for brettdev
         id: meta
         uses: docker/metadata-action@v6
         with:
           images: ghcr.io/fullaxx/brettdev
           tags: |
-            type=raw,value=24.04
+            type=raw,value=latest,enable=${{ github.ref == 'refs/heads/master' }}
+            type=raw,value=26.04,enable=${{ github.ref == 'refs/heads/master' }}
+            type=raw,value=resolute,enable=${{ github.ref == 'refs/heads/master' }}
+            type=raw,value=24.04,enable=${{ github.ref == 'refs/heads/24.04' }}
+            type=raw,value=noble,enable=${{ github.ref == 'refs/heads/24.04' }}
+            type=sha,prefix={{branch}}-
 
       - name: Tags and labels for brettdev-full
         id: meta_full
@@ -52,7 +63,12 @@ jobs:
         with:
           images: ghcr.io/fullaxx/brettdev-full
           tags: |
-            type=raw,value=24.04
+            type=raw,value=latest,enable=${{ github.ref == 'refs/heads/master' }}
+            type=raw,value=26.04,enable=${{ github.ref == 'refs/heads/master' }}
+            type=raw,value=resolute,enable=${{ github.ref == 'refs/heads/master' }}
+            type=raw,value=24.04,enable=${{ github.ref == 'refs/heads/24.04' }}
+            type=raw,value=noble,enable=${{ github.ref == 'refs/heads/24.04' }}
+            type=sha,prefix={{branch}}-
           labels: |
             org.opencontainers.image.title=brettdev-full
 

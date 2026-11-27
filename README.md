@@ -1,7 +1,7 @@
 # Ubuntu Desktop running Openbox in VNC for developers
 
-**This is the `24.04` branch:** Ubuntu 24.04 (noble), published as `ghcr.io/fullaxx/brettdev:24.04` and `ghcr.io/fullaxx/brettdev-full:24.04`. \
-It gets maintenance updates and hand-picked features. For the latest release (Ubuntu 26.04: `:latest` and `:26.04`), see the `master` branch and its [branches and tags](https://github.com/Fullaxx/brettdev#branches-and-tags).
+**This is the `24.04` branch:** Ubuntu 24.04 (noble), published as `ghcr.io/fullaxx/brettdev:24.04` and `ghcr.io/fullaxx/brettdev-full:24.04`, also as `:noble`. \
+It gets maintenance updates and hand-picked features. For the latest release (Ubuntu 26.04: `:latest`, `:26.04` and `:resolute`), see the `master` branch and its [branches and tags](https://github.com/Fullaxx/brettdev#branches-and-tags).
 
 ## Base Docker Image
 [fullaxx/ubuntu-desktop](https://www.github.com/Fullaxx/ubuntu-desktop) 24.04 (x64)
