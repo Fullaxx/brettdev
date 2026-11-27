@@ -119,6 +119,7 @@ plzip \
 psmisc \
 pv \
 recordmydesktop \
+redir \
 rpm \
 rpmlint \
 rsync \
@@ -128,6 +129,7 @@ screen \
 scrot \
 shellcheck \
 silversearcher-ag \
+socat \
 software-properties-common \
 sqlite3 \
 sshfs \
