@@ -15,12 +15,12 @@ Each branch publishes its own tags of both images, rebuilt at every push:
 
 | Tag | Branch | Ubuntu | Python | GCC |
 | --- | --- | --- | --- | --- |
-| `:latest`, `:26.04` | [`master`](https://github.com/Fullaxx/brettdev/tree/master) | 26.04 (resolute) | 3.14 | 15 |
-| `:24.04` | [`24.04`](https://github.com/Fullaxx/brettdev/tree/24.04) | 24.04 (noble) | 3.12 | 13 |
+| `:latest`, `:26.04`, `:resolute` | [`master`](https://github.com/Fullaxx/brettdev/tree/master) | 26.04 (resolute) | 3.14 | 15 |
+| `:24.04`, `:noble` | [`24.04`](https://github.com/Fullaxx/brettdev/tree/24.04) | 24.04 (noble) | 3.12 | 13 |
 
-- `:latest` tracks 26.04: every push to `master` publishes the same images as `:latest` and `:26.04`.
+- `:latest` tracks 26.04: every push to `master` publishes the same images as `:latest`, `:26.04` and `:resolute`.
 - `24.04` gets maintenance updates and hand-picked features. Its README uses `:24.04` in every example.
-- Every push to `master` is also tagged `master-<short commit>`. These tags never move.
+- Every push to `master` or `24.04` is also tagged `<branch>-<short commit>`. These tags never move.
 - The examples below use `:latest`. Everything in this README works the same with `:26.04`.
 
 ## Get the images
